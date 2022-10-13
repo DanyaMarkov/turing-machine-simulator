@@ -1,0 +1,19 @@
+.main {
+    min-height: calc(100vh - 100px - 210px);
+    // min-height: calc(100vh - 100px - 220px);
+    background-color: #ffffff;
+
+    padding: 20px 200px;
+
+    // background-color: darkslategrey;
+
+    //Должно быть                     - 214px  чтобы ровно было
+    // min-height: calc(100vh - 120px - 213px);
+}
+
+
+@media (max-width: 1200px) { 
+    .main {
+        padding: 20px 0px;
+    }
+}

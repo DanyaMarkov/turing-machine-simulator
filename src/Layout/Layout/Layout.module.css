@@ -1,0 +1,12 @@
+.main {
+  min-height: calc(100vh - 100px - 210px);
+  background-color: #ffffff;
+  padding: 20px 200px;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    padding: 20px 0px;
+  }
+}
+/*# sourceMappingURL=Layout.module.css.map */

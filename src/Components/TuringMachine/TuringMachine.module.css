@@ -1,0 +1,208 @@
+.machine {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 30px;
+}
+
+.machine__panel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
+  margin-bottom: 50px;
+  border-bottom: 3px solid black;
+}
+
+.machine__body {
+  padding: 0px 30px 30px 30px;
+}
+
+.panelTitle {
+  padding: 30px;
+}
+
+.panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-radius: 0px 25px 0px 0px;
+  background-color: bisque;
+  padding: 30px 35px;
+}
+
+.panel__el {
+  padding: 10px 15px;
+  margin: 0px 10px;
+  border: 2px inset black;
+  border-radius: 20px;
+  background-color: #919191;
+  color: white;
+  font-size: larger;
+}
+
+.tape {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 10px auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tape__left, .tape__right {
+  padding: 20px;
+  background-color: black;
+  color: white;
+}
+
+.tape__left:hover, .tape__right:hover {
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  padding: 20px;
+  background-color: #575757;
+  color: white;
+}
+
+.tape__cells {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.cell {
+  min-width: 45px;
+  min-height: 50px;
+  padding: 5px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.currCell {
+  min-width: 45px;
+  min-height: 30px;
+  padding: 3px;
+  border: 3px dashed black;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.currentState {
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 10px;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.alphabet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alphabet__title {
+  padding: 10px;
+}
+
+.alphabet__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alphabet__values input {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.alphabet__confirm {
+  margin-left: 10px;
+}
+
+.alphabet__confirm button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 35px;
+}
+
+.alphabet__confirm button:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.table {
+  font-size: 18px;
+  border: 2px solid black;
+}
+
+.table table th {
+  background-color: blanchedalmond;
+  padding: 15px;
+  border: 1px solid black;
+  min-width: 50px;
+}
+
+.tableHeader {
+  border: 3px solid black;
+  padding: 20px;
+}
+
+.char {
+  padding: 15px;
+  border: 1px solid black;
+  margin: 0px;
+  text-align: center;
+}
+
+.choose select {
+  font-size: 20px !important;
+  margin: 0px 10px;
+  border: 1px solid black;
+}
+/*# sourceMappingURL=TuringMachine.module.css.map */

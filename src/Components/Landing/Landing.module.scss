@@ -1,0 +1,55 @@
+
+.landing {
+    display: flex;
+    flex-direction: column;
+}
+
+.about {
+    background-color: bisque;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 45px;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    &__title {
+        font-size: 30px;
+        font-weight: 800;
+    }
+    &__text{
+        font-size: 22px;
+        font-weight: 400;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    &__button { 
+        
+        padding: 10px 15px;
+        border-radius: 30px;
+        background-color: black;
+        color: white;
+        width: 80%;
+        text-align: center;
+        font-size: large;
+        font-weight: bolder;
+    }
+    &__button:hover { 
+        cursor: pointer;
+        width: 80%;
+        border: 2px dashed black;
+        transition: 0.1s;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+
+    }
+    &__picture {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            max-width: 500px;
+
+        }
+    }
+}
