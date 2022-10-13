@@ -33,6 +33,10 @@ const TuringMachine = observer(() => {
         },
     });
 
+    const makeOneStep = () => {
+        machine.makeStep();
+    };
+
     return (
         <div className={css.machine}>
             <div className={css.machine__panel}>
@@ -40,7 +44,9 @@ const TuringMachine = observer(() => {
                     <h1>Панель управления</h1>
                 </div>
                 <div className={css.panel}>
-                    <div className={css.panel__el}>Сделать шаг</div>
+                    <div className={css.panel__el} onClick={makeOneStep}>
+                        Сделать шаг
+                    </div>
                     <div
                         className={css.panel__el}
                         onClick={() => {
@@ -53,7 +59,7 @@ const TuringMachine = observer(() => {
             </div>
             <div className={css.machine__body}>
                 <div className={css.tape}>
-                    <div className={css.tape__left} onClick={() => machine.changeCurrentCells("left")}>
+                    <div className={css.tape__left} onClick={() => machine.changeCurrentCells("L")}>
                         Налево
                     </div>
                     <div className={css.tape__cells}>
@@ -73,17 +79,15 @@ const TuringMachine = observer(() => {
                             );
                         })}
                     </div>
-                    <div className={css.tape__right} onClick={() => machine.changeCurrentCells("right")}>
+                    <div className={css.tape__right} onClick={() => machine.changeCurrentCells("R")}>
                         Направо
                     </div>
                 </div>
 
-                <div className={css.currentState}>q1</div>
-                {/* 11111111111111111111111111111 */}
-                {/* <div className={css.alphabet}>Текущее состояние: q1</div> */}
+                {/* Текущее состояние */}
+                <div className={css.currentState}>{machine.currentState}</div>
 
-                {/* 11111111111111111111111111111 */}
-
+                {/* Алфавит */}
                 <div className={css.alphabet}>
                     <div className={css.alphabet__title}>Введите допустимый алфавит</div>
                     <div>
@@ -160,9 +164,9 @@ const TuringMachine = observer(() => {
                                                                 );
                                                             }}
                                                         >
-                                                            <option value={"L"}>{"L"}</option>
-                                                            <option value={"R"}>{"R"}</option>
-                                                            <option value={"S"}>{"S"}</option>
+                                                            <option value={"L"}>L</option>
+                                                            <option value={"R"}>R</option>
+                                                            <option value={"S"}>S</option>
                                                         </select>
                                                         {/* Выбор встречаемого символа */}
                                                         <select

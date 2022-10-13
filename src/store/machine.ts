@@ -6,6 +6,26 @@ class machine {
         makeAutoObservable(this);
     }
 
+    
+    alphabet:string = "01";
+    alphabetChars = ["0", "1", "[ ]"];
+    currentCell:number = 0;
+    currentCellValue:string = "1"
+    currentState:string = "q1";
+
+    states = [
+        {name: "q1", rules: [
+            {meet: "0", char:"0", action:"L", state: "q1"},
+            {meet: "1", char:"0", action:"L", state: "q1"},
+            {meet: "[ ]", char:"0", action:"L", state: "q1"},
+        ]},
+        {name: "q2", rules: [
+            {meet: "0", char:"0", action:"L", state: "q1"},
+            {meet: "1", char:"0", action:"L", state: "q1"},
+            {meet: "[ ]", char:"0", action:"L", state: "q1"},
+        ]}
+    ]
+
     cells = [
         {id: -15, value: ""},
         {id: -14, value: ""},
@@ -40,7 +60,6 @@ class machine {
         {id: 15, value: ""},
     ]
 
-    currentCell:number = 0;
 
     currentCells = [
         {id: -5, value: ""},
@@ -56,35 +75,35 @@ class machine {
         {id: 5, value: ""},
     ]
 
-    idCell:number = 0;
-
+    //Отрисовка видимой части ленты
     changeCurrentCells(move:string) {        
         this.currentCells = [];
-        if (move === "right") {
-            this.currentCell++;
-        }
-        if (move === "left") {
-            this.currentCell--;
+
+        switch(move) {
+            case "R": 
+                this.currentCell++
+                break
+            case "L": 
+                this.currentCell--
+                break
         }
 
         for (var i:number = this.currentCell - 5; i <= this.currentCell + 5; i++) {
-
-        
             for(let item of this.cells) {
                 if (item.id === i) {
-                    this.idCell = i;
-                    // console.log("нашёл ID cell " + this.idCell)
                     this.currentCells.push({id: item.id, value: item.value});
                 } 
             }
-
         }
-       
+        if (this.currentCells[5].value === "") {
+            this.currentCellValue = "[ ]";
+        } else {
+            this.currentCellValue = this.currentCells[5].value;
+        }
+        
     }
 
-    alphabet:string = "01";
-    alphabetChars = ["0", "1", "[ ]"];
-
+    //Удаляем с ленты символы, которые отсутствуют в алфавите
     checkDuplicateOnTape() {
         let k = 0;
         let come = 0;
@@ -104,6 +123,7 @@ class machine {
         this.changeCurrentCells("stay");
     }
 
+    //Сохранение алфавита 
     setAlphabet(value:string) {
         this.alphabetChars = [];
 
@@ -124,7 +144,7 @@ class machine {
         return this.alphabet
     }
 
-    //возможно надо отдельно сделать массив состояний и массив правил
+    //При изменении значений в таблице состояний сохраняем эти изменения
     changeState(stateName:string, char:string, parametr:string, value:string) {
         for (let state of this.states) {
             if (state.name === stateName) {
@@ -155,18 +175,34 @@ class machine {
         }
     }
 
-    states = [
-        {name: "q1", rules: [
-            {meet: "0", char:"0", action:"L", state: "q1"},
-            {meet: "1", char:"0", action:"L", state: "q1"},
-            {meet: "[ ]", char:"0", action:"L", state: "q1"},
-        ]},
-        {name: "q2", rules: [
-            {meet: "0", char:"0", action:"L", state: "q1"},
-            {meet: "1", char:"0", action:"L", state: "q1"},
-            {meet: "[ ]", char:"0", action:"L", state: "q2"},
-        ]}
-    ]
+   
+
+    makeStep() {
+        for (let state of this.states) {
+            if (state.name === this.currentState) {
+                for (let rule of state.rules) {
+                    if (rule.meet === this.currentCellValue) {
+
+                        for(let cell of this.cells) {
+                            if (cell.id === this.currentCell) {
+                                if (rule.char === "[ ]") {
+                                    cell.value = "";
+                                } else {
+                                    cell.value = rule.char;
+                                }
+                            }
+                        }
+
+                        this.changeCurrentCells(rule.action);
+                        this.currentState = rule.state;
+                        
+                        return
+                    }
+                }
+            }
+        }
+    }
+
     //Обновлять встреченные символы еще
 
     //Прописать функцию добавления нового СИМВОЛА, там надо
