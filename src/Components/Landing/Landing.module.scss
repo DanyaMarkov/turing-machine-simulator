@@ -5,14 +5,27 @@
 }
 
 .about {
-    background-color: bisque;
+    // background-color: bisque;
+    background-image: url(./../../assets/backgroundMachine.png);
+    background-size: 100% 100%;
     border: 1px solid black;
     border-radius: 15px;
     padding: 45px;
 
+    min-height: 600px;
+
     display: grid;
     grid-template-columns: 50% 50%;
 
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: bisque;
+        padding: 40px;
+        border-radius: 20px;
+        border: 2px solid black;
+    }
     &__title {
         font-size: 30px;
         font-weight: 800;
@@ -33,23 +46,28 @@
         text-align: center;
         font-size: large;
         font-weight: bolder;
-    }
-    &__button:hover { 
-        cursor: pointer;
-        width: 80%;
-        border: 2px dashed black;
-        transition: 0.1s;
-        background-color: rgb(255, 255, 255);
-        color: rgb(0, 0, 0);
+        border: 2px solid black;
 
+        &:hover {
+            cursor: pointer;
+            width: 80%;
+            border: 2px dashed black;
+            transition: 0.1s;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+        }
     }
+
     &__picture {
+        // background-image: url(./../../assets/backgroundMachine.png);
+
         display: flex;
         flex-direction: column;
         align-items: center;
         img {
             max-width: 500px;
-
+            border-radius: 20px;
+            border: 2px solid black;
         }
     }
 }

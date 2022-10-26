@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACL,gBAAgB,EAAE,KAAkB;EACpC,MAAM,EAAE,eAAe;EACvB,aAAa,EAAE,IAAI;CACtB",
+    "sources": [
+        "Practice.module.scss"
+    ],
+    "names": [],
+    "file": "Practice.module.css"
+}

@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import { observer } from "mobx-react-lite";
 import machine from "../../store/machine";
 import css from "./TuringMachine.module.css";
+import arrowNext from "../../assets/arrowNext.png";
 
 const TuringMachine = observer(() => {
     const formikSetAlphabet = useFormik({
@@ -45,7 +46,10 @@ const TuringMachine = observer(() => {
                 </div>
                 <div className={css.panel}>
                     <div className={css.panel__el} onClick={makeOneStep}>
-                        Сделать шаг
+                        <div>Сделать шаг</div>
+                        <div>
+                            <img src={arrowNext} alt={"Сделать шаг стрелка"} />
+                        </div>
                     </div>
                     <div
                         className={css.panel__el}
@@ -104,12 +108,8 @@ const TuringMachine = observer(() => {
                                     value={formikSetAlphabet.values.alphabet}
                                 />
                             </div>
-                            {/* {formikSetAlphabet.errors.alphabet ? (
-                        <p>{formikSetAlphabet.errors.alphabet}</p>
-                    ) : null} */}
                             <div className={css.alphabet__confirm}>
                                 <button onClick={formikSetAlphabet.submitForm}>Подтвердить</button>
-                                {/* <button onClick={() => machine.saveAlphabet()}>Подтвердить</button> */}
                             </div>
                         </form>
                     </div>
@@ -122,18 +122,17 @@ const TuringMachine = observer(() => {
                                 <tr className={css.tableHeader}>
                                     <th> </th>
                                     {machine.states.map((state) => {
-                                        return <th>{state.name}</th>;
+                                        return <th className={css.tableHeader}>{state.name}</th>;
                                     })}
                                 </tr>
 
-                                {machine.alphabetChars.map((char) => {
+                                {machine.alphabetChars.map((char, indexChar) => {
                                     return (
                                         <tr>
                                             <td className={css.char}> {char} </td>
-                                            {machine.states.map((state, index) => {
-                                                return (
+                                            {machine.states.map((state, indexState) => {
+                                                return state.rules[indexChar].isVisible ? (
                                                     <td className={css.choose}>
-                                                        {/* Выбор записываемого */}
                                                         <select
                                                             name={"char"}
                                                             onChange={(e) => {
@@ -187,6 +186,19 @@ const TuringMachine = observer(() => {
                                                                 );
                                                             })}
                                                         </select>
+                                                        <div
+                                                            className={css.deleteRule}
+                                                            onClick={() => (state.rules[indexChar].isVisible = false)}
+                                                        >
+                                                            X
+                                                        </div>
+                                                    </td>
+                                                ) : (
+                                                    <td
+                                                        className={css.addState}
+                                                        onClick={() => (state.rules[indexChar].isVisible = true)}
+                                                    >
+                                                        +
                                                     </td>
                                                 );
                                             })}

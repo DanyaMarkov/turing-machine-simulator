@@ -15,14 +15,14 @@ class machine {
 
     states = [
         {name: "q1", rules: [
-            {meet: "0", char:"0", action:"L", state: "q1"},
-            {meet: "1", char:"0", action:"L", state: "q1"},
-            {meet: "[ ]", char:"0", action:"L", state: "q1"},
+            {meet: "0", char:"0", action:"L", state: "q1", isVisible: true},
+            {meet: "1", char:"0", action:"L", state: "q1", isVisible: true},
+            {meet: "[ ]", char:"0", action:"L", state: "q1", isVisible: true},
         ]},
         {name: "q2", rules: [
-            {meet: "0", char:"0", action:"L", state: "q1"},
-            {meet: "1", char:"0", action:"L", state: "q1"},
-            {meet: "[ ]", char:"0", action:"L", state: "q1"},
+            {meet: "0", char:"0", action:"L", state: "q1", isVisible: false},
+            {meet: "1", char:"0", action:"L", state: "q1", isVisible: false},
+            {meet: "[ ]", char:"0]", action:"L", state: "q1", isVisible: false},
         ]}
     ]
 
@@ -121,6 +121,7 @@ class machine {
             k++;
         }
         this.changeCurrentCells("stay");
+
     }
 
     //Сохранение алфавита 
@@ -132,15 +133,51 @@ class machine {
         }
         this.alphabetChars = this.alphabetChars.filter((e, i) =>  this.alphabetChars.indexOf(e) === i )
 
+
+        // for (let state of this.states) {
+        //     if (state.rules[0].meet === "[ ]") {
+        //         state.rules[0].meet = "---"
+        //     }
+
+        // }
+
+        //Добавляем в States новые символы
+        for (let state of this.states) {
+            for (let char of this.alphabetChars) {
+                if (!this.alphabet.includes(char)) {
+                    console.log("Не было символа: " + char)
+                    state.rules.push(
+                        {meet:char, char:"[ ]", action:"L", state: "q1", isVisible: false}
+                    )
+                }
+            }
+        }
+
         this.alphabet = "";
         for (let c of this.alphabetChars) {
             this.alphabet = this.alphabet + c;
         }
+        
+        //Удаляю "встречу" старого символа из MEET в rules
+        for (let state of this.states) {
+            let i = 0;
+            for (let rule of state.rules) {
+                if (!this.alphabet.includes(rule.meet) && rule.meet !== "[ ]") {
+                    console.log("Удаляю это: " + state.rules[i].meet)
+                    state.rules.splice(i, 1);
+                }
+               
+                i++;
+            }
+        }
+
+        console.log(JSON.stringify(this.states))
 
         this.alphabetChars.push("[ ]")
 
         this.checkDuplicateOnTape();
-    
+
+       
         return this.alphabet
     }
 
@@ -182,15 +219,20 @@ class machine {
             if (state.name === this.currentState) {
                 for (let rule of state.rules) {
                     if (rule.meet === this.currentCellValue) {
-
-                        for(let cell of this.cells) {
-                            if (cell.id === this.currentCell) {
-                                if (rule.char === "[ ]") {
-                                    cell.value = "";
-                                } else {
-                                    cell.value = rule.char;
+                        if ( rule.isVisible === true) {
+                            for(let cell of this.cells) {
+                                if (cell.id === this.currentCell) {
+                                    if (rule.char === "[ ]") {
+                                        cell.value = "";
+                                    } else {
+                                        cell.value = rule.char;
+                                    }
                                 }
                             }
+                        }
+                        else {
+                            alert("Выполнение программы завершено")
+                            break
                         }
 
                         this.changeCurrentCells(rule.action);
@@ -198,6 +240,8 @@ class machine {
                         
                         return
                     }
+                   
+
                 }
             }
         }

@@ -20,9 +20,13 @@
 
 .panelTitle {
     padding: 30px;
+    background-color: rgb(105, 59, 59);
+    color: white;
+    border-radius: 23px 0px 0px 0px;
     // border: 3px solid black;
     // border-radius: 30px;
 }
+
 .panel {
     display: flex;
     flex-direction: row;
@@ -33,11 +37,21 @@
     &__el {
         padding: 10px 15px;
         margin: 0px 10px;
-        border: 2px inset black;
+        // border: 2px inset black;
         border-radius: 20px;
         background-color: rgb(145, 145, 145);
         color: white;
         font-size: larger;
+        border-bottom: 4px solid #b2b1b1;
+        text-shadow: 0px 1px 0px #fafafa;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            max-width: 50px;
+        }
+
     }
 }
 
@@ -157,31 +171,54 @@
     table {
         th {
             background-color: blanchedalmond;
-            padding: 15px;
+            // padding: 10px 115px;
             border: 1px solid black;
             min-width: 50px;
         }
        
+        
     }
     
 }
 .tableHeader {
     border: 3px solid black;
-    padding: 20px;
+    padding: 10px 80px;
+
 }
 
 .char {
-    padding: 15px;
+    padding: 40px 10px;
     border: 1px solid black;
     margin: 0px;
     text-align: center;
 }
 
 .choose {
+    // display: flex;
+    // flex-direction: row;
+    border: 1px solid black;
     select {
         font-size: 20px !important;
-        margin: 0px 10px;
-
-        border: 1px solid black;
+        margin: 3px 3px;
+        padding: 10px;
     }
+}
+
+.notChoose {
+    padding: 10px;
+}
+
+.addState {
+    padding: 5px;
+    font-size: 30px;
+    border: 1px dashed rgb(95, 95, 95);
+    text-align: center;
+}
+
+.deleteRule {
+    font-size: 20px !important;
+
+    padding: 5px;
+    background-color: rgb(229, 123, 123);
+    color: white;
 }
