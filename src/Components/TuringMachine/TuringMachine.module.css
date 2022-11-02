@@ -1,5 +1,5 @@
 .machine {
-  background-color: white;
+  background-color: whitesmoke;
   border: 3px solid black;
   border-radius: 30px;
 }
@@ -41,7 +41,7 @@
   padding: 10px 15px;
   margin: 0px 10px;
   border-radius: 20px;
-  background-color: #919191;
+  background-color: #3e3939;
   color: white;
   font-size: larger;
   border-bottom: 4px solid #b2b1b1;
@@ -53,9 +53,19 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.panel__el:hover {
+  cursor: pointer;
+  background-color: #5d5c5c;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .panel__el img {
@@ -101,6 +111,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  background-color: white;
 }
 
 .cell {
@@ -118,6 +129,7 @@
   min-height: 30px;
   padding: 3px;
   border: 3px dashed black;
+  background-color: #f5e9e9;
   text-align: center;
   font-size: 40px;
   font-weight: 700;
@@ -236,6 +248,12 @@
   font-size: 30px;
   border: 1px dashed #5f5f5f;
   text-align: center;
+}
+
+.addState:hover {
+  background-color: silver;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .deleteRule {

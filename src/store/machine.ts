@@ -6,7 +6,8 @@ class machine {
         makeAutoObservable(this);
     }
 
-    
+    // isMachineRunning = false;
+
     alphabet:string = "01";
     alphabetChars = ["0", "1", "[ ]"];
     currentCell:number = 0;
@@ -81,10 +82,14 @@ class machine {
 
         switch(move) {
             case "R": 
-                this.currentCell++
+                this.currentCell++;
+                this.cells.push({id: this.cells[this.cells.length - 1].id + 1, value: ""})
+                // console.log(this.cells)
                 break
-            case "L": 
+                case "L": 
                 this.currentCell--
+                this.cells.unshift({id: this.cells[0].id - 1, value: ""})
+                // console.log(this.cells)
                 break
         }
 
@@ -231,14 +236,16 @@ class machine {
                             }
                         }
                         else {
+                            // console.log("Выполнение программы завершено")
                             alert("Выполнение программы завершено")
-                            break
+                            return false
+                            // break
                         }
 
                         this.changeCurrentCells(rule.action);
                         this.currentState = rule.state;
                         
-                        return
+                        return true
                     }
                    
 

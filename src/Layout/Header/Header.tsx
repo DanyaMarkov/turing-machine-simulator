@@ -9,7 +9,7 @@ const Header = observer(() => {
     return (
         <header className={css.header}>
             <div className={css.logo}>
-                <NavLink to="/">машина тьюринга</NavLink>
+                <NavLink to="/turing-machine-simulator">машина тьюринга</NavLink>
             </div>
             <div className={css.menu}>
                 <div className={css.menu__el}>

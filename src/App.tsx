@@ -10,7 +10,7 @@ function App() {
         <div className="App">
             <Routes>
                 <Route path="/" element={<Layout />}>
-                    <Route path="" element={<Landing />} />
+                    <Route path="turing-machine-simulator" element={<Landing />} />
                     <Route path="app" element={<TuringMachine />} />
                     <Route path="training" element={<Training />} />
                     <Route path="practice" element={<Practice />} />

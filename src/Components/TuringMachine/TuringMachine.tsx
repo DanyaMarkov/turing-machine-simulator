@@ -1,8 +1,9 @@
 import { useFormik } from "formik";
 import { observer } from "mobx-react-lite";
+import { useState } from "react";
 import machine from "../../store/machine";
 import css from "./TuringMachine.module.css";
-import arrowNext from "../../assets/arrowNext.png";
+// import arrowNext from "../../assets/arrowNext.png";
 
 const TuringMachine = observer(() => {
     const formikSetAlphabet = useFormik({
@@ -35,8 +36,31 @@ const TuringMachine = observer(() => {
     });
 
     const makeOneStep = () => {
-        machine.makeStep();
+        return machine.makeStep();
     };
+
+    const [currentMachineStatus, setMachineStatus] = useState(0);
+
+    const handleClick = () => {
+        if (currentMachineStatus) {
+            clearInterval(currentMachineStatus);
+            setMachineStatus(0);
+            return;
+        }
+
+        const newIntervalId: any = setInterval(() => {
+            let isRun = makeOneStep();
+            // let d = machine.makeStep();
+            if (!isRun) {
+                clearInterval(newIntervalId);
+                clearInterval(currentMachineStatus);
+                setMachineStatus(0);
+            }
+        }, 1000);
+        setMachineStatus(newIntervalId);
+    };
+
+    // const intervalID = setInterval(myCallback, 500, 'Parameter 1', 'Parameter 2');
 
     return (
         <div className={css.machine}>
@@ -47,17 +71,19 @@ const TuringMachine = observer(() => {
                 <div className={css.panel}>
                     <div className={css.panel__el} onClick={makeOneStep}>
                         <div>Сделать шаг</div>
-                        <div>
+                        {/* <div>
                             <img src={arrowNext} alt={"Сделать шаг стрелка"} />
-                        </div>
+                        </div> */}
                     </div>
                     <div
                         className={css.panel__el}
                         onClick={() => {
-                            console.log(JSON.stringify(machine.states[0]));
+                            handleClick();
+                            // machine.isMachineRunning ? launchOfMachine(true) : launchOfMachine(false);
+                            // console.log(JSON.stringify(machine.states[0]));
                         }}
                     >
-                        Запустить
+                        {currentMachineStatus ? <> Остановить</> : <> Запустить</>}
                     </div>
                 </div>
             </div>
