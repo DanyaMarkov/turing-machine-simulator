@@ -1,14 +1,14 @@
+
+// .layout {
+//     // padding: 0 calc(50vw - 720px);
+//     // min-height: 100vh;
+// }
+
 .main {
-    min-height: calc(100vh - 320px);
-    // min-height: calc(100vh - 100px - 220px);
+    padding: 0 calc(50vw - 720px);
     background-color: #ffffff;
+    min-height: 100vh - 22vh;
 
-    padding: 20px 250px;
-
-    // background-color: darkslategrey;
-
-    //Должно быть                     - 214px  чтобы ровно было
-    // min-height: calc(100vh - 120px - 213px);
 }
 
 

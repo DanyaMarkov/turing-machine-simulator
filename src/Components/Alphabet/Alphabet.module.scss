@@ -1,0 +1,39 @@
+.alphabet {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__title {
+        padding: 10px;
+    }
+
+    &__input {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__values {
+        input {
+            padding: 10px;
+            font-size: 20px;
+        }
+    }
+
+    &__confirm {
+        margin-left: 10px;
+        button {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 35px;
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(59, 59, 59);
+                transition: 0.2s;
+            }
+        }
+    }
+
+}

@@ -14,6 +14,8 @@ class machine {
     currentCellValue:string = "1"
     currentState:string = "q1";
 
+    alphabetNeedUpdate = false;
+
     states = [
         {name: "q1", rules: [
             {meet: "0", char:"0", action:"L", state: "q1", isVisible: true},
@@ -86,11 +88,11 @@ class machine {
                 this.cells.push({id: this.cells[this.cells.length - 1].id + 1, value: ""})
                 // console.log(this.cells)
                 break
-                case "L": 
+            case "L": 
                 this.currentCell--
                 this.cells.unshift({id: this.cells[0].id - 1, value: ""})
                 // console.log(this.cells)
-                break
+            break
         }
 
         for (var i:number = this.currentCell - 5; i <= this.currentCell + 5; i++) {
@@ -138,19 +140,11 @@ class machine {
         }
         this.alphabetChars = this.alphabetChars.filter((e, i) =>  this.alphabetChars.indexOf(e) === i )
 
-
-        // for (let state of this.states) {
-        //     if (state.rules[0].meet === "[ ]") {
-        //         state.rules[0].meet = "---"
-        //     }
-
-        // }
-
         //Добавляем в States новые символы
         for (let state of this.states) {
             for (let char of this.alphabetChars) {
                 if (!this.alphabet.includes(char)) {
-                    console.log("Не было символа: " + char)
+                    // console.log("Не было символа: " + char)
                     state.rules.push(
                         {meet:char, char:"[ ]", action:"L", state: "q1", isVisible: false}
                     )
@@ -168,7 +162,7 @@ class machine {
             let i = 0;
             for (let rule of state.rules) {
                 if (!this.alphabet.includes(rule.meet) && rule.meet !== "[ ]") {
-                    console.log("Удаляю это: " + state.rules[i].meet)
+                    // console.log("Удаляю это: " + state.rules[i].meet)
                     state.rules.splice(i, 1);
                 }
                
@@ -176,7 +170,7 @@ class machine {
             }
         }
 
-        console.log(JSON.stringify(this.states))
+        // console.log(JSON.stringify(this.states))
 
         this.alphabetChars.push("[ ]")
 
@@ -217,8 +211,6 @@ class machine {
         }
     }
 
-   
-
     makeStep() {
         for (let state of this.states) {
             if (state.name === this.currentState) {
@@ -254,10 +246,117 @@ class machine {
         }
     }
 
+    reset() {
+        this.cells = [
+            {id: -15, value: ""},
+            {id: -14, value: ""},
+            {id: -13, value: ""},
+            {id: -12, value: ""},
+            {id: -11, value: ""},
+            {id: -10, value: ""},
+            {id: -9, value: ""},
+            {id: -8, value: ""},
+            {id: -7, value: ""},
+            {id: -6, value: ""},
+            {id: -5, value: ""},
+            {id: -4, value: ""},
+            {id: -3, value: ""},
+            {id: -2, value: ""},
+            {id: -1, value: ""},
+            {id: 0, value: "1"},
+            {id: 1, value: "0"},
+            {id: 2, value: "0"},
+            {id: 3, value: ""},
+            {id: 4, value: ""},
+            {id: 5, value: ""},
+            {id: 6, value: ""},
+            {id: 7, value: ""},
+            {id: 8, value: ""},
+            {id: 9, value: ""},
+            {id: 10, value: ""},
+            {id: 11, value: ""},
+            {id: 12, value: ""},
+            {id: 13, value: ""},
+            {id: 14, value: ""},
+            {id: 15, value: ""},
+        ]
+
+        this.currentCells = [
+            {id: -5, value: ""},
+            {id: -4, value: ""},
+            {id: -3, value: ""},
+            {id: -2, value: ""},
+            {id: -1, value: ""},
+            {id: 0, value: "1"},
+            {id: 1, value: "0"},
+            {id: 2, value: "0"},
+            {id: 3, value: ""},
+            {id: 4, value: ""},
+            {id: 5, value: ""},
+        ]
+
+        this.alphabet = "01";
+        this.alphabetChars = ["0", "1", "[ ]"];
+        this.currentCell= 0;
+        this.currentCellValue = "1"
+        this.currentState = "q1";
+
+        this.setAlphabet("01")
+        this.alphabetNeedUpdate = true;
+    }
+
     //Обновлять встреченные символы еще
 
     //Прописать функцию добавления нового СИМВОЛА, там надо
 
+    returnNumbers(string:string) {
+        return string.replace(/\D/g,'')
+    }
+
+
+    rulesFor:any[] = []
+    addState() {
+        this.rulesFor = []
+        let nameOfNewState = "q" + (Number(this.returnNumbers(this.states[this.states.length - 1].name)) + 1)
+
+        for (let stroke of this.alphabetChars) {
+            this.rulesFor.push({meet: stroke, char: this.alphabetChars[0], action: "L", state: "q1", isVisible: true})
+        }
+        
+        this.states.push({name: nameOfNewState, rules: this.rulesFor})
+
+        for (let rule of this.states[this.states.length - 1].rules) {
+            // rule.state = nameOfNewState
+            rule.isVisible = false
+        }
+    }
+
+   
+
+    removeState(stateIndex:number) {
+        if (stateIndex === 0) {
+            return false
+        }
+        this.states.splice(stateIndex, 1);
+    }
+
+
+    currEditedCell = 100000000;
+    editCell(cellId:number) {
+        this.currEditedCell = cellId
+    }
+
+    editCellValue(newValue:string) {
+        for (let cell of this.cells)
+        {
+            if (cell.id === this.currEditedCell) {
+                cell.value = newValue;
+                this.changeCurrentCells("") 
+            }
+        }
+    }
+
 }
+
 
 export default new machine();

@@ -1,16 +1,24 @@
 .footer {
+    // min-height: 160px;
+    min-height: 10vh;
+
+    background-color: #241d1d;
+    color: white;
+    
+    font-size: 20px;
+
+    padding: 1vh calc(50vw - 720px);
+
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
     justify-content: space-around;
-    padding: 0px 400px;
-    background-color: #241d1d;
-    color: white;
-    min-height: 160px;
-
-    font-size: 20px;
-
+    // max-width: 1400px;
+    margin: 0 auto;
     &__el {
+        // padding-bottom: 10px;
+        // padding-top: 10px;
+
         display: flex;
         justify-content: center;
         a {
@@ -18,13 +26,17 @@
             color: bisque;
         }
         svg {
+            transition: 0.35s;
             &:hover {
+                transition: 0.35s;
                 cursor: pointer;
                 border-radius: 50%;
-                background-color: rgb(174, 174, 174);
+                fill: rgb(255, 255, 255);
+                // background-color: rgb(79, 63, 63);
             }
 
         }
     }
+
 
 }

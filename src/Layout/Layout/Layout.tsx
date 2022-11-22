@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 
 const Layout = observer(() => {
     return (
-        <>
+        <div className={css.layout}>
             <Header />
 
             <main className={css.main}>
@@ -15,7 +15,7 @@ const Layout = observer(() => {
             </main>
 
             <Footer />
-        </>
+        </div>
     );
 });
 

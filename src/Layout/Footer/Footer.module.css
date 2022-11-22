@@ -1,4 +1,9 @@
 .footer {
+  min-height: 10vh;
+  background-color: #241d1d;
+  color: white;
+  font-size: 20px;
+  padding: 1vh calc(50vw - 720px);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 50% 50%;
@@ -8,11 +13,7 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  padding: 0px 400px;
-  background-color: #241d1d;
-  color: white;
-  min-height: 160px;
-  font-size: 20px;
+  margin: 0 auto;
 }
 
 .footer__el {
@@ -29,9 +30,16 @@
   color: bisque;
 }
 
+.footer__el svg {
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+}
+
 .footer__el svg:hover {
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
   cursor: pointer;
   border-radius: 50%;
-  background-color: #aeaeae;
+  fill: white;
 }
 /*# sourceMappingURL=Footer.module.css.map */

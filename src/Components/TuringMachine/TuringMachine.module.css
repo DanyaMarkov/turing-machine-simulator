@@ -2,6 +2,7 @@
   background-color: whitesmoke;
   border: 3px solid black;
   border-radius: 30px;
+  margin-bottom: 20px;
 }
 
 .machine__panel {
@@ -32,12 +33,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   border-radius: 0px 25px 0px 0px;
   background-color: bisque;
   padding: 30px 35px;
 }
 
-.panel__el {
+.panel__button {
   padding: 10px 15px;
   margin: 0px 10px;
   border-radius: 20px;
@@ -61,15 +65,27 @@
           align-items: center;
 }
 
-.panel__el:hover {
+.panel__button:hover {
   cursor: pointer;
   background-color: #5d5c5c;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.panel__el img {
-  max-width: 50px;
+.panel__el {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .tape {
@@ -152,114 +168,9 @@
   font-weight: 800;
 }
 
-.alphabet {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.alphabet__title {
-  padding: 10px;
-}
-
-.alphabet__input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.alphabet__values input {
-  padding: 10px;
-  font-size: 20px;
-}
-
-.alphabet__confirm {
-  margin-left: 10px;
-}
-
-.alphabet__confirm button {
-  background-color: black;
-  color: white;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 35px;
-}
-
-.alphabet__confirm button:hover {
-  cursor: pointer;
-  background-color: #3b3b3b;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.table {
-  font-size: 18px;
-  border: 2px solid black;
-}
-
-.table table th {
-  background-color: blanchedalmond;
-  border: 1px solid black;
-  min-width: 50px;
-}
-
-.tableHeader {
-  border: 3px solid black;
-  padding: 10px 80px;
-}
-
-.char {
-  padding: 40px 10px;
-  border: 1px solid black;
-  margin: 0px;
-  text-align: center;
-}
-
-.choose {
-  border: 1px solid black;
-}
-
-.choose select {
-  font-size: 20px !important;
-  margin: 3px 3px;
-  padding: 10px;
-}
-
-.notChoose {
-  padding: 10px;
-}
-
-.addState {
-  padding: 5px;
-  font-size: 30px;
-  border: 1px dashed #5f5f5f;
-  text-align: center;
-}
-
-.addState:hover {
-  background-color: silver;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.deleteRule {
-  font-size: 20px !important;
-  padding: 5px;
-  background-color: #e57b7b;
-  color: white;
+.inputEditCell {
+  width: 30px;
+  height: 40px;
+  font-size: 35px;
 }
 /*# sourceMappingURL=TuringMachine.module.css.map */

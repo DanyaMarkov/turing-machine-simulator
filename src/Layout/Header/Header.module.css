@@ -6,13 +6,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background-color: #ffffff;
-  min-height: 120px;
+  min-height: 10vh;
+  padding: 0 calc(50vw - 720px);
   font-size: 20px;
 }
 
@@ -54,12 +56,19 @@
 .menu__el {
   padding: 10px 0px;
   border-radius: 70px !important;
-  margin: 0px 20px;
   color: white !important;
   text-decoration: none;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+}
+
+.menu__el:not(:first-child) {
+  margin-left: 70px;
 }
 
 .menu__el_activeLink {
+  -webkit-transition: 1.35s;
+  transition: 1.35s;
   color: #e7ff0b !important;
   border-radius: 70px;
 }
