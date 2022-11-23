@@ -92,78 +92,88 @@ const TuringMachine = observer(() => {
                 </div>
             </div>
             <div className={css.machine__body}>
-                <div className={css.tape}>
-                    <div className={css.tape__left} onClick={() => machine.changeCurrentCells("L")}>
-                        Налево
+                <div className={css.functional}>
+                    <div className={css.tape}>
+                        <div className={css.tape__left} onClick={() => machine.changeCurrentCells("L")}>
+                            Налево
+                        </div>
+                        <div className={css.tape__cells}>
+                            {machine.currentCells.map((cell) => {
+                                return (
+                                    <>
+                                        {cell.id === machine.currentCell ? (
+                                            <div
+                                                className={css.currCell}
+                                                key={cell.id}
+                                                onDoubleClick={() => editCell({ id: cell.id, value: cell.value })}
+                                            >
+                                                {machine.currEditedCell === cell.id ? (
+                                                    <input
+                                                        className={css.inputEditCell}
+                                                        type={"text"}
+                                                        onChange={(e) => editCellValue(e.target.value)}
+                                                        value={currEditedCell}
+                                                        onBlur={(e) =>
+                                                            saveCellValue({
+                                                                id: machine.currEditedCell,
+                                                                value: e.target.value,
+                                                            })
+                                                        }
+                                                    />
+                                                ) : (
+                                                    cell.value
+                                                )}
+                                            </div>
+                                        ) : (
+                                            <div
+                                                className={css.cell}
+                                                key={cell.id}
+                                                onDoubleClick={() => editCell({ id: cell.id, value: cell.value })}
+                                            >
+                                                {machine.currEditedCell === cell.id ? (
+                                                    <input
+                                                        className={css.inputEditCell}
+                                                        type={"text"}
+                                                        onChange={(e) => editCellValue(e.target.value)}
+                                                        value={currEditedCell}
+                                                        onBlur={(e) =>
+                                                            saveCellValue({
+                                                                id: machine.currEditedCell,
+                                                                value: e.target.value,
+                                                            })
+                                                        }
+                                                    />
+                                                ) : (
+                                                    cell.value
+                                                )}
+                                            </div>
+                                        )}
+                                    </>
+                                );
+                            })}
+                        </div>
+                        <div className={css.tape__right} onClick={() => machine.changeCurrentCells("R")}>
+                            Направо
+                        </div>
                     </div>
-                    <div className={css.tape__cells}>
-                        {machine.currentCells.map((cell) => {
-                            return (
-                                <>
-                                    {cell.id === machine.currentCell ? (
-                                        <div
-                                            className={css.currCell}
-                                            key={cell.id}
-                                            onDoubleClick={() => editCell({ id: cell.id, value: cell.value })}
-                                        >
-                                            {machine.currEditedCell === cell.id ? (
-                                                <input
-                                                    className={css.inputEditCell}
-                                                    type={"text"}
-                                                    onChange={(e) => editCellValue(e.target.value)}
-                                                    value={currEditedCell}
-                                                    onBlur={(e) =>
-                                                        saveCellValue({
-                                                            id: machine.currEditedCell,
-                                                            value: e.target.value,
-                                                        })
-                                                    }
-                                                />
-                                            ) : (
-                                                cell.value
-                                            )}
-                                        </div>
-                                    ) : (
-                                        <div
-                                            className={css.cell}
-                                            key={cell.id}
-                                            onDoubleClick={() => editCell({ id: cell.id, value: cell.value })}
-                                        >
-                                            {machine.currEditedCell === cell.id ? (
-                                                <input
-                                                    className={css.inputEditCell}
-                                                    type={"text"}
-                                                    onChange={(e) => editCellValue(e.target.value)}
-                                                    value={currEditedCell}
-                                                    onBlur={(e) =>
-                                                        saveCellValue({
-                                                            id: machine.currEditedCell,
-                                                            value: e.target.value,
-                                                        })
-                                                    }
-                                                />
-                                            ) : (
-                                                cell.value
-                                            )}
-                                        </div>
-                                    )}
-                                </>
-                            );
+
+                    {/* Текущее состояние */}
+                    <div className={css.currentState}>{machine.currentState}</div>
+
+                    {/* Алфавит */}
+                    <Alphabet initialInput={machine.alphabet} />
+
+                    {/* Таблица состояний */}
+                    <TableOfStates />
+                </div>
+                <div className={css.actionLog}>
+                    <div className={css.actionLog__header}>Журнал действий</div>
+                    <div className={css.actionLog__body}>
+                        {machine.actionLogs.map((log) => {
+                            return <div>{log}</div>;
                         })}
                     </div>
-                    <div className={css.tape__right} onClick={() => machine.changeCurrentCells("R")}>
-                        Направо
-                    </div>
                 </div>
-
-                {/* Текущее состояние */}
-                <div className={css.currentState}>{machine.currentState}</div>
-
-                {/* Алфавит */}
-                <Alphabet initialInput={machine.alphabet} />
-
-                {/* Таблица состояний */}
-                <TableOfStates />
             </div>
         </div>
     );

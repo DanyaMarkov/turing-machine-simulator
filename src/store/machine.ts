@@ -1,5 +1,10 @@
 import { makeAutoObservable } from "mobx";
 
+// interface ActionType {
+//     previous: any,
+//     current: any
+// }
+
 class machine {
 
     constructor() {
@@ -211,7 +216,11 @@ class machine {
         }
     }
 
+    actionLogs:any[] = []
+
     makeStep() {
+        let initialStroke:any = this.getCurrentPosition()
+        
         for (let state of this.states) {
             if (state.name === this.currentState) {
                 for (let rule of state.rules) {
@@ -234,16 +243,20 @@ class machine {
                             // break
                         }
 
-                        this.changeCurrentCells(rule.action);
                         this.currentState = rule.state;
+                        
+                        let finishStroke:string = this.getCurrentPosition()
+
+                        this.actionLogs.push("P" + this.actionLogs.length + "   " + initialStroke + "→" + finishStroke)            
+                        this.changeCurrentCells(rule.action);
                         
                         return true
                     }
-                   
-
                 }
             }
         }
+
+        
     }
 
     reset() {
@@ -294,6 +307,21 @@ class machine {
             {id: 4, value: ""},
             {id: 5, value: ""},
         ]
+
+        this.states = [
+            {name: "q1", rules: [
+                {meet: "0", char:"0", action:"L", state: "q1", isVisible: true},
+                {meet: "1", char:"0", action:"L", state: "q1", isVisible: true},
+                {meet: "[ ]", char:"0", action:"L", state: "q1", isVisible: true},
+            ]},
+            {name: "q2", rules: [
+                {meet: "0", char:"0", action:"L", state: "q1", isVisible: false},
+                {meet: "1", char:"0", action:"L", state: "q1", isVisible: false},
+                {meet: "[ ]", char:"0]", action:"L", state: "q1", isVisible: false},
+            ]}
+        ]
+
+        this.actionLogs = [] 
 
         this.alphabet = "01";
         this.alphabetChars = ["0", "1", "[ ]"];
@@ -356,7 +384,35 @@ class machine {
         }
     }
 
+    /////////////////////////////////////////////////
+
+    // actions:ActionType[] = []
+
+    // makeAction() {
+
+    //     let currPoistion = this.getCurrentPosition()
+
+    //     this.actions.push({
+    //         previous: currPoistion,
+    //         current: {}
+    //     })
+    // }
+
+    getCurrentPosition():any {
+    
+        let cellStroke = ""
+        for (let symbol of this.cells) {
+            if (this.currentCell === symbol.id) {
+                cellStroke += this.currentState;
+            }
+            if (symbol.value !== "") {
+                cellStroke += symbol.value;
+            }
+        }
+        return cellStroke
+    }
 }
+
 
 
 export default new machine();

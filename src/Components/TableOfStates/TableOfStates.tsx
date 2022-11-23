@@ -8,7 +8,7 @@ const TableOfStates = observer(() => {
     };
 
     const handleRemoveState = (stateIndex: number) => {
-        console.log(stateIndex);
+        // console.log(stateIndex);
         machine.removeState(stateIndex);
     };
 
