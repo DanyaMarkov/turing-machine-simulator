@@ -25,7 +25,7 @@ class machine {
         {name: "q1", rules: [
             {meet: "0", char:"0", action:"L", state: "q1", isVisible: true},
             {meet: "1", char:"0", action:"L", state: "q1", isVisible: true},
-            {meet: "[ ]", char:"0", action:"L", state: "q1", isVisible: true},
+            {meet: "[ ]", char:"0", action:"L", state: "q1", isVisible: false},
         ]},
         {name: "q2", rules: [
             {meet: "0", char:"0", action:"L", state: "q1", isVisible: false},
@@ -244,7 +244,7 @@ class machine {
                         }
 
                         this.currentState = rule.state;
-                        
+
                         let finishStroke:string = this.getCurrentPosition()
 
                         this.actionLogs.push("P" + this.actionLogs.length + "   " + initialStroke + "→" + finishStroke)            
@@ -312,7 +312,7 @@ class machine {
             {name: "q1", rules: [
                 {meet: "0", char:"0", action:"L", state: "q1", isVisible: true},
                 {meet: "1", char:"0", action:"L", state: "q1", isVisible: true},
-                {meet: "[ ]", char:"0", action:"L", state: "q1", isVisible: true},
+                {meet: "[ ]", char:"0", action:"L", state: "q1", isVisible: false},
             ]},
             {name: "q2", rules: [
                 {meet: "0", char:"0", action:"L", state: "q1", isVisible: false},

@@ -1,4 +1,5 @@
 .footer {
+  font-family: 'Press Start 2P', cursive;
   min-height: 10vh;
   background-color: #241d1d;
   color: white;
@@ -27,7 +28,7 @@
 
 .footer__el a {
   text-decoration: none;
-  color: bisque;
+  color: white;
 }
 
 .footer__el svg {
@@ -40,6 +41,7 @@
   transition: 0.35s;
   cursor: pointer;
   border-radius: 50%;
-  fill: white;
+  fill: black;
+  background-color: white;
 }
 /*# sourceMappingURL=Footer.module.css.map */

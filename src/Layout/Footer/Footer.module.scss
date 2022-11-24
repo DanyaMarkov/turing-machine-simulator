@@ -1,29 +1,25 @@
 .footer {
     // min-height: 160px;
+    font-family: 'Press Start 2P', cursive;
     min-height: 10vh;
 
     background-color: #241d1d;
     color: white;
     
     font-size: 20px;
-
     padding: 1vh calc(50vw - 720px);
-
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
     justify-content: space-around;
-    // max-width: 1400px;
     margin: 0 auto;
-    &__el {
-        // padding-bottom: 10px;
-        // padding-top: 10px;
 
+    &__el {
         display: flex;
         justify-content: center;
         a {
             text-decoration: none;
-            color: bisque;
+            color: rgb(255, 255, 255);
         }
         svg {
             transition: 0.35s;
@@ -31,12 +27,9 @@
                 transition: 0.35s;
                 cursor: pointer;
                 border-radius: 50%;
-                fill: rgb(255, 255, 255);
-                // background-color: rgb(79, 63, 63);
+                fill: black;
+                background-color: white;
             }
-
         }
     }
-
-
 }
