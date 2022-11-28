@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/turing-machine-simulator/static/css/main.7ea447bb.css",
-    "main.js": "/turing-machine-simulator/static/js/main.d8dda122.js",
+    "main.css": "/turing-machine-simulator/static/css/main.0eb0da50.css",
+    "main.js": "/turing-machine-simulator/static/js/main.824b3ec0.js",
     "static/js/787.9d60a47c.chunk.js": "/turing-machine-simulator/static/js/787.9d60a47c.chunk.js",
     "static/media/backgroundMachine.png": "/turing-machine-simulator/static/media/backgroundMachine.ec157391df778cdbaa9e.png",
-    "static/media/webFormat.jpg": "/turing-machine-simulator/static/media/webFormat.0999aa8b9f3c3c2fb210.jpg",
+    "static/media/settings.png": "/turing-machine-simulator/static/media/settings.2a0763de11e5748bcd08.png",
+    "static/media/webFormat.jpg": "/turing-machine-simulator/static/media/webFormat.e43a0df77f99a8e7db9a.jpg",
+    "static/media/tutorial.png": "/turing-machine-simulator/static/media/tutorial.b14b8ad1a714d6bf4945.png",
+    "static/media/tasks.png": "/turing-machine-simulator/static/media/tasks.b2ba3b86cbb2556ad9f5.png",
     "static/media/computingMachine.png": "/turing-machine-simulator/static/media/computingMachine.a4b39c2aade15007e198.png",
     "static/media/algorithm.png": "/turing-machine-simulator/static/media/algorithm.8a39114dc0137cc7da3f.png",
     "static/media/task.png": "/turing-machine-simulator/static/media/task.61ad81ed2d20abb52be0.png",
     "index.html": "/turing-machine-simulator/index.html",
-    "main.7ea447bb.css.map": "/turing-machine-simulator/static/css/main.7ea447bb.css.map",
-    "main.d8dda122.js.map": "/turing-machine-simulator/static/js/main.d8dda122.js.map",
+    "main.0eb0da50.css.map": "/turing-machine-simulator/static/css/main.0eb0da50.css.map",
+    "main.824b3ec0.js.map": "/turing-machine-simulator/static/js/main.824b3ec0.js.map",
     "787.9d60a47c.chunk.js.map": "/turing-machine-simulator/static/js/787.9d60a47c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ea447bb.css",
-    "static/js/main.d8dda122.js"
+    "static/css/main.0eb0da50.css",
+    "static/js/main.824b3ec0.js"
   ]
 }
