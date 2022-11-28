@@ -67,7 +67,7 @@ const TuringMachine = observer(() => {
     return (
         <div className={css.machine}>
             <div className={css.machine__panel}>
-                <div className={css.panelTitle}>
+                <div className={css.machine__panel_title}>
                     <h1>Панель управления</h1>
                 </div>
                 <div className={css.panel}>

@@ -15,19 +15,33 @@
   font-size: 16px !important;
 }
 
+.machine__panel_title {
+  background-color: #693b3b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  border-radius: 20px 0px 0px 0px;
+  font-size: 24px;
+  font-family: 'Press Start 2P', cursive;
+}
+
 .machine__body {
   padding: 0px 30px 30px 30px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 65% 35%;
       grid-template-columns: 65% 35%;
-}
-
-.panelTitle {
-  padding: 30px;
-  background-color: #693b3b;
-  color: white;
-  border-radius: 23px 0px 0px 0px;
 }
 
 .panel {

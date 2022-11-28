@@ -5,8 +5,12 @@ import cn from "classnames";
 import algorithm from "../../assets/algorithm.png";
 import computingMachine from "../../assets/computingMachine.png";
 import task from "../../assets/task.png";
-import webFormat from "../../assets/webFormat.jpg";
 import landing from "../../store/landing";
+
+import webFormat from "../../assets/webFormat.jpg";
+import settings from "../../assets/settings.png";
+import tutorial from "../../assets/tutorial.png";
+import tasks from "../../assets/tasks.png";
 
 const Landing = observer(() => {
     const navigate = useNavigate();
@@ -36,7 +40,7 @@ const Landing = observer(() => {
                         в 1936 году А. Тьюрингом для уточнения понятия алгоритма. Согласно тезису Тьюринга, любой
                         алгоритм может быть записан в виде программы для машины Тьюринга.{" "}
                     </div>
-                    <div onClick={() => navigate("/app")} className={css.about__button}>
+                    <div onClick={() => navigate("app")} className={css.about__button}>
                         попробовать
                     </div>
                 </div>
@@ -96,7 +100,7 @@ const Landing = observer(() => {
                     <div className={cn(css.advanteges__content_el2, css.benefit)}>
                         <div className={css.benefit__title}> Гибкая настройка </div>
                         <div className={css.benefit__picture}>
-                            <img src={webFormat} alt="преимущество" />
+                            <img src={settings} alt="преимущество" />
                         </div>
                         <div className={css.benefit__text}>
                             Вписывайте любые значения, редактируйте доступный алфавит, задавайте бесконечное количество
@@ -104,18 +108,22 @@ const Landing = observer(() => {
                         </div>
                     </div>
                     <div className={cn(css.advanteges__content_el3, css.benefit)}>
-                        <div className={css.benefit__title}> Онлайн решение</div>
+                        <div className={css.benefit__title}> Обучение</div>
                         <div className={css.benefit__picture}>
-                            <img src={webFormat} alt="преимущество" />
+                            <img src={tutorial} alt="преимущество" />
                         </div>
-                        <div className={css.benefit__text}> Онлайн решение</div>
+                        <div className={css.benefit__text}>
+                            Мы предоставляем теоретическую базу по работе с алгоритмической машиной
+                        </div>
                     </div>
                     <div className={cn(css.advanteges__content_el4, css.benefit)}>
-                        <div className={css.benefit__title}> Онлайн решение</div>
+                        <div className={css.benefit__title}>Практические задания</div>
                         <div className={css.benefit__picture}>
-                            <img src={webFormat} alt="преимущество" />
+                            <img src={tasks} alt="преимущество" />
                         </div>
-                        <div className={css.benefit__text}> Онлайн решение</div>
+                        <div className={css.benefit__text}>
+                            Потренируйтесь в обращении с машиной Тьюринга в специально подготовленных заданиях!
+                        </div>
                     </div>
                 </div>
             </div>

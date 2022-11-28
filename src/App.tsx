@@ -11,9 +11,9 @@ function App() {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route path="turing-machine-simulator" element={<Landing />} />
-                    <Route path="app" element={<TuringMachine />} />
-                    <Route path="training" element={<Training />} />
-                    <Route path="practice" element={<Practice />} />
+                    <Route path="turing-machine-simulator/app" element={<TuringMachine />} />
+                    <Route path="turing-machine-simulator/training" element={<Training />} />
+                    <Route path="turing-machine-simulator/practice" element={<Practice />} />
                 </Route>
             </Routes>
         </div>

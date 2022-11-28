@@ -141,8 +141,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .reason__title {
@@ -255,7 +256,9 @@
 }
 
 .benefit__picture img {
+  padding: 10px;
   border-radius: 50%;
+  background-color: white;
   max-width: 120px;
   max-height: 120px;
 }

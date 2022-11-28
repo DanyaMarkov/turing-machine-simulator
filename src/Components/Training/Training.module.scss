@@ -1,5 +1,242 @@
-.machine {
-    background-color: rgb(255, 255, 255);
+*{
+    box-sizing: border-box;
+}
+
+.training {
+    min-height: 80vh;
+    background-color: rgb(235, 235, 235);
     border: 3px solid black;
     border-radius: 30px;
+    margin-bottom: 20px;
+    
+    &__robot {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: auto auto;
+        margin-bottom: 20px;
+
+        &_text {
+            margin-top: 15px;
+        }
+        h1 {
+            font-size: 28px;
+            min-height: 34px;
+        }
+        img {
+            width: 105px;
+            height: 130px;
+        }
+        button {
+            margin-top: 20px;
+            // margin-right: 20px;
+            padding: 10px 50px;
+            min-width: 300px;
+            min-height: 40px;
+            background-color: rgb(92, 92, 199);
+            color: white;
+            transition: 0.4s;
+            border-radius: 15px;
+            &:hover {
+                cursor: pointer;
+                transition: 0.4s;
+                background-color: rgb(127, 127, 237);
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        // flex-direction: column;
+        // flex-direction: column;
+        // justify-content: space-around;
+    }
+
 }
+
+.cool {
+    display: flex;
+    flex-direction: column;
+}
+
+.robot {
+    margin-top: 10px;
+    animation: robot ease-in-out infinite 10s;
+    padding: 40px 40px;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(209, 209, 30);
+    border-radius: 50%;
+    border: 2px solid black;
+    
+    transition: 20s;
+    &:hover {
+        cursor: pointer;
+        transition: 5s;
+        background-color: rgb(213, 78, 78);
+        animation: robotHover ease-in-out 1s;;
+        &__eyes {
+            &_el{
+                padding: 3px 3px;
+
+            }
+        }
+    }
+
+    &__eyes {
+        display: flex;
+        flex-direction: row;
+        :not(:first-child) {
+            margin-left: 10px;
+        }
+
+        &_el {
+            animation: eyes ease-in-out infinite 4s;;
+
+            padding: 10px 10px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 50%;
+            border: 2px solid black;
+        }
+
+    }
+}
+
+@keyframes eyes {
+    0% {
+        padding: 10px 10px;
+    }
+    46% {
+        padding: 10px 10px;
+    }
+    48% {
+        padding: 3px 10px;
+
+    }
+    53% {
+        padding: 10px 10px;
+    }
+    100% {
+        padding: 10px 10px;
+    }
+}
+@keyframes robot {
+
+    0% {
+        padding: 40px 40px;
+    }
+
+    20% {
+        padding: 40px 40px;
+    }
+
+    30% {
+        padding: 40px 20px;
+    }
+
+    40% {
+        padding: 40px 60px;
+    }
+    50% {
+        padding: 40px 40px;
+    }
+
+    100% {
+        padding: 40px 40px;
+    }
+
+
+}
+@keyframes robotHover {
+    0% {
+        rotate: 0deg;
+    }
+    35% {
+        rotate: 10deg;
+    }
+    65% {
+        rotate: -10deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+}
+
+.training1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto auto;
+   
+    overflow:hidden;
+    // position: absolute;
+    z-index: 2;
+    .tape {
+        z-index: 4;
+        // height: 30px;
+        // position: absolute;
+        // animation: tape1 infinite 2s cubic-bezier(0.25, 0.25, 0.25, 0.25);;
+        animation: tape1 infinite 24s cubic-bezier(0.25, 0.25, 0.25, 0.25);;
+        display: flex;
+        flex-direction: row;
+        bottom: 400px;
+
+        &__el {
+            // padding: 30px 30px;
+            border: 1px solid black;
+            background-color: rgb(255, 255, 255);
+            min-height: 50px;
+            min-width: 50px;
+            font-size: 30px;
+            font-weight: 800;
+            text-align: center;
+        }
+    }
+}
+
+
+
+.alphabet {
+    position: absolute;
+    bottom: 400px;
+    right: 780px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    input {
+        margin-left: 15px;
+        padding: 10px;
+        font-size: 22px;
+    }
+}
+
+.head {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    bottom: 350px;
+    right: 800px;
+
+}
+
+
+@keyframes tape1 {
+    0% {
+        // left: -1000px;
+        // padding-left: -1000px;
+        // padding-left:-1032px;
+        padding-right:4000px;
+    }
+    100% {
+        // left: 200px;
+        // padding-left:1000px;
+        padding-left:4000px;
+        // padding-left: 200px;
+    }
+}
+

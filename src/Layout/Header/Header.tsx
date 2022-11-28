@@ -13,17 +13,17 @@ const Header = observer(() => {
             </div>
             <div className={css.menu}>
                 <div className={css.menu__el}>
-                    <NavLink to="/app" className={setActive}>
+                    <NavLink to="turing-machine-simulator/app" className={setActive}>
                         симулятор
                     </NavLink>
                 </div>
                 <div className={css.menu__el}>
-                    <NavLink to="/training" className={setActive}>
+                    <NavLink to="turing-machine-simulator/training" className={setActive}>
                         обучение
                     </NavLink>
                 </div>
                 <div className={css.menu__el}>
-                    <NavLink to="/practice" className={setActive}>
+                    <NavLink to="turing-machine-simulator/practice" className={setActive}>
                         практические задания
                     </NavLink>
                 </div>
