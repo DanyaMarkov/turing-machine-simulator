@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/turing-machine-simulator/static/css/main.0eb0da50.css",
+    "main.css": "/turing-machine-simulator/static/css/main.9e179cfd.css",
     "main.js": "/turing-machine-simulator/static/js/main.824b3ec0.js",
     "static/js/787.9d60a47c.chunk.js": "/turing-machine-simulator/static/js/787.9d60a47c.chunk.js",
     "static/media/backgroundMachine.png": "/turing-machine-simulator/static/media/backgroundMachine.ec157391df778cdbaa9e.png",
@@ -12,12 +12,12 @@
     "static/media/algorithm.png": "/turing-machine-simulator/static/media/algorithm.8a39114dc0137cc7da3f.png",
     "static/media/task.png": "/turing-machine-simulator/static/media/task.61ad81ed2d20abb52be0.png",
     "index.html": "/turing-machine-simulator/index.html",
-    "main.0eb0da50.css.map": "/turing-machine-simulator/static/css/main.0eb0da50.css.map",
+    "main.9e179cfd.css.map": "/turing-machine-simulator/static/css/main.9e179cfd.css.map",
     "main.824b3ec0.js.map": "/turing-machine-simulator/static/js/main.824b3ec0.js.map",
     "787.9d60a47c.chunk.js.map": "/turing-machine-simulator/static/js/787.9d60a47c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0eb0da50.css",
+    "static/css/main.9e179cfd.css",
     "static/js/main.824b3ec0.js"
   ]
 }
