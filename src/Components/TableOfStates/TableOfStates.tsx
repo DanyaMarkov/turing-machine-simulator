@@ -14,7 +14,7 @@ const TableOfStates = observer(() => {
 
     return (
         <div>
-            <h3>Таблица состояний</h3>
+            <h3>Таблица переходов</h3>
             <div className={css.table}>
                 <table>
                     <tbody>

@@ -1,6 +1,6 @@
 .footer {
   font-family: 'Press Start 2P', cursive;
-  min-height: 10vh;
+  min-height: 15vh;
   background-color: #241d1d;
   color: white;
   font-size: 20px;
@@ -41,7 +41,6 @@
   transition: 0.35s;
   cursor: pointer;
   border-radius: 50%;
-  fill: black;
-  background-color: white;
+  fill: #ccbfbf;
 }
 /*# sourceMappingURL=Footer.module.css.map */

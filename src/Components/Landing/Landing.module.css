@@ -9,8 +9,10 @@
 }
 
 .about {
+  -webkit-box-shadow: 13px 15px 12px -2px rgba(34, 60, 80, 0.2);
+  box-shadow: 13px 15px 12px -2px rgba(34, 60, 80, 0.2);
   background-image: url(./../../assets/backgroundMachine.png);
-  background-size: 100% 100%;
+  background-size: cover;
   border: 1px solid black;
   border-radius: 15px;
   padding: 45px;
@@ -31,9 +33,11 @@
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background-color: bisque;
+  background-color: rgba(246, 232, 212, 0.85);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   padding: 40px;
-  border-radius: 20px;
+  border-radius: 40px;
   border: 2px solid black;
 }
 
@@ -59,14 +63,16 @@
   font-size: large;
   font-weight: bolder;
   border: 2px solid black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .about__button:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   cursor: pointer;
   width: 80%;
   border: 2px dashed black;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
   background-color: white;
   color: black;
 }

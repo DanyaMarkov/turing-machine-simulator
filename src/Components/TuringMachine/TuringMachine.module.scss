@@ -83,6 +83,10 @@
 
     background-image: url(https://img.freepik.com/premium-photo/white-texture-watercolor-paper_88281-381.jpg?w=2000);
 
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
     &__header {
         border-radius: 10px 10px 0px 0px;
         text-align: center;
@@ -108,7 +112,7 @@
     justify-content: space-around;
     align-items: center;
     // min-width: 100%;
-    
+
     &__left, &__right {
         padding: 20px;
         background-color: black;
@@ -131,6 +135,9 @@
 }
 
 .cell {
+    
+    box-sizing: content-box;
+
     min-width: 45px;
     min-height: 50px;
     padding: 5px;
@@ -147,6 +154,8 @@
 }
 
 .currCell {
+    box-sizing: content-box;
+
     min-width: 45px;
     min-height: 30px;
     padding: 3px;

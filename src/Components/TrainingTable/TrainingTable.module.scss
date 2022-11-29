@@ -47,7 +47,7 @@
 }
 
 .char {
-    padding: 50px 10px;
+    padding: 30px 10px;
     border: 1px solid black;
     margin: 0px;
     text-align: center;
@@ -62,24 +62,23 @@
     }
 }
 
+.redBorder {
+    border: 13px solid rgb(221, 25, 25);
+    select {
+        font-size: 20px !important;
+        margin: 1px 1px;
+        padding: 10px;
+    }
+}
+
 .notChoose {
     padding: 10px;
 }
 
-.addState {
-    padding: 5px;
-    font-size: 30px;
-    border: 1px dashed rgb(95, 95, 95);
-    text-align: center;
-}
-.addState:hover {
-    background-color: rgb(192, 192, 192);
-    transition: 0.3s;
-}
+
 
 .deleteRule {
     font-size: 20px !important;
-
     padding: 5px;
     background-color: rgb(229, 123, 123);
     color: white;

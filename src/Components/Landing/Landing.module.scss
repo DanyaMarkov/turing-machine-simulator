@@ -5,9 +5,13 @@
 }
 
 .about {
-    // background-color: bisque;
+    -webkit-box-shadow: 13px 15px 12px -2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 13px 15px 12px -2px rgba(34, 60, 80, 0.2);
+    box-shadow: 13px 15px 12px -2px rgba(34, 60, 80, 0.2);
+
     background-image: url(./../../assets/backgroundMachine.png);
-    background-size: 100% 100%;
+    background-size: cover;
+
     border: 1px solid black;
     border-radius: 15px;
     padding: 45px;
@@ -21,9 +25,11 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        background-color: bisque;
+        background-color: rgba(246, 232, 212, 0.85);
+        backdrop-filter: blur(5px);
+
         padding: 40px;
-        border-radius: 20px;
+        border-radius: 40px;
         border: 2px solid black;
     }
     &__title {
@@ -48,11 +54,12 @@
         font-weight: bolder;
         border: 2px solid black;
 
+        transition: 0.5s;
         &:hover {
+            transition: 0.5s;
             cursor: pointer;
             width: 80%;
             border: 2px dashed black;
-            transition: 0.1s;
             background-color: rgb(255, 255, 255);
             color: rgb(0, 0, 0);
         }

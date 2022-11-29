@@ -1,7 +1,7 @@
 .footer {
     // min-height: 160px;
     font-family: 'Press Start 2P', cursive;
-    min-height: 10vh;
+    min-height: 15vh;
 
     background-color: #241d1d;
     color: white;
@@ -27,8 +27,7 @@
                 transition: 0.35s;
                 cursor: pointer;
                 border-radius: 50%;
-                fill: black;
-                background-color: white;
+                fill: rgb(204, 191, 191);
             }
         }
     }
