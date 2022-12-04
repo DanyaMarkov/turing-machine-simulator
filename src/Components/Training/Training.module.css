@@ -2,7 +2,7 @@
   min-height: 80vh;
   background-color: #ebebeb;
   border: 3px solid black;
-  border-radius: 30px;
+  border-radius: 15px;
   margin-bottom: 20px;
 }
 
@@ -465,5 +465,79 @@
   -webkit-filter: brightness(1.15);
           filter: brightness(1.15);
   cursor: pointer;
+}
+
+.spectator {
+  position: inherit;
+  margin: 100px auto;
+  -webkit-animation: robot ease-in-out infinite 10s;
+          animation: robot ease-in-out infinite 10s;
+  padding: 40px 40px;
+  width: 320px;
+  height: 320px;
+  background-color: #a582f7;
+  border-radius: 50%;
+  border: 2px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.spectator:hover {
+  cursor: pointer;
+  -webkit-transition: 5s;
+  transition: 5s;
+}
+
+.spectator__eyes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.spectator__eyes :not(:first-child) {
+  margin-left: 10px;
+}
+
+.spectator__eyes_el {
+  -webkit-animation: blink ease-in-out infinite 5s;
+          animation: blink ease-in-out infinite 5s;
+  padding: 40px 40px;
+  background-color: #dddddd;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    padding: 40px 40px;
+  }
+  96% {
+    padding: 40px 40px;
+  }
+  98% {
+    padding: 10px 40px;
+  }
+  100% {
+    padding: 40px 40px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    padding: 40px 40px;
+  }
+  96% {
+    padding: 40px 40px;
+  }
+  98% {
+    padding: 10px 40px;
+  }
+  100% {
+    padding: 40px 40px;
+  }
 }
 /*# sourceMappingURL=Training.module.css.map */

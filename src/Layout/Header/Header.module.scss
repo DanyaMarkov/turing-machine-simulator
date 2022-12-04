@@ -13,8 +13,10 @@
     justify-content: space-between;
     align-items: center;
     // padding: 0px 200px;
-    background-color: #ffffff;
-    // color: rgb(0, 0, 0);
+    // background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+
     min-height: 10vh;
     padding: 0 calc(50vw - 720px);
 
@@ -41,7 +43,6 @@
 
 .menu {
     display: flex;
-    background-color: #ffffff;
 
     a {
         padding: 10px 15px;

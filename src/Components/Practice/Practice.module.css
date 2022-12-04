@@ -1,6 +1,107 @@
-.machine {
-  background-color: white;
+.practice {
+  background-color: whitesmoke;
   border: 3px solid black;
-  border-radius: 30px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  min-height: 80vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
+}
+
+.practice__settings {
+  border-radius: 25px 0px 0px 25px;
+  background-color: beige;
+  padding: 10px 20px;
+  border-right: 2px solid black;
+}
+
+.practice__settings_title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.practice__tasks {
+  padding: 30px 30px;
+  overflow-y: auto;
+  height: 60vh;
+}
+
+.content {
+  padding: 5px 20px;
+}
+
+.task {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 85% 15%;
+      grid-template-columns: 85% 15%;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+.task:not(:first-child) {
+  margin-top: 20px;
+}
+
+.task__isCompleted {
+  border-radius: 0px 20px 20px 0px;
+  background-color: white;
+  margin: auto auto;
+}
+
+.task__isCompleted input {
+  -webkit-transform: scale(3);
+          transform: scale(3);
+}
+
+.taskBody {
+  border-radius: 20px 0px 0px 20px;
+  padding: 20px;
+}
+
+.taskBody:hover {
+  -webkit-filter: brightness(1.05);
+          filter: brightness(1.05);
+  cursor: pointer;
+}
+
+.taskBody__difficult_easy {
+  background-color: #7ae67d;
+}
+
+.taskBody__difficult_medium {
+  background-color: #eef154;
+}
+
+.taskBody__difficult_hard {
+  background-color: #fe9e9e;
+}
+
+.taskBody__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.taskBody__header_title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.taskBody__header_diff {
+  font-size: 14px;
+  font-weight: 400;
 }
 /*# sourceMappingURL=Practice.module.css.map */

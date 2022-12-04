@@ -125,6 +125,12 @@ const Training = observer(() => {
                         <div className={css.end__el3} onClick={() => navigate("/turing-machine-simulator/practice")}>
                             К практическим заданиям
                         </div>
+                        <div className={css.spectator}>
+                            <div className={css.spectator__eyes}>
+                                <div className={css.spectator__eyes_el}></div>
+                                <div className={css.spectator__eyes_el}></div>
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>

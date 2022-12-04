@@ -1,5 +1,95 @@
-.machine {
-    background-color: rgb(255, 255, 255);
+.practice {
+    background-color: rgb(245, 245, 245);
     border: 3px solid black;
-    border-radius: 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    min-height: 80vh;
+
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    &__settings {
+        border-radius: 25px 0px 0px 25px;
+        background-color: beige;
+        padding: 10px 20px;
+        border-right: 2px solid black;
+        &_title {
+            font-size: 20px;
+            font-weight: 800;
+        }
+    }
+
+    &__tasks {
+        padding: 30px 30px;
+        overflow-y: auto;
+        height: 60vh;
+    }
+}
+
+
+.content {
+    padding: 5px 20px;
+}
+
+
+.task {
+    display: grid;
+    grid-template-columns: 85% 15%;
+
+    // padding: 10px 20px;
+    border-radius: 20px;
+    border: 2px solid black;
+
+
+    &:not(:first-child) {
+        margin-top: 20px;
+    }
+
+    &__isCompleted {
+        border-radius: 0px 20px 20px 0px;
+        background-color: white;
+        margin: auto auto;
+        input {
+            transform:scale(3);
+        }
+    }
+}
+
+.taskBody {
+    border-radius: 20px 0px 0px 20px;
+    padding: 20px;
+
+    &:hover {
+        filter: brightness(1.05);
+        cursor: pointer;
+    }
+
+    &__difficult {
+        &_easy {
+            background-color: rgb(122, 230, 125);
+        }
+        &_medium {
+            background-color: rgb(238, 241, 84);
+        }
+        &_hard {
+            background-color: rgb(254, 158, 158);
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        &_title {
+            font-size: 20px;
+            font-weight: 800;
+        }
+        &_diff {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
 }
