@@ -1,28 +1,24 @@
-import { observer } from "mobx-react-lite";
+import cn from "classnames";
 import { useState } from "react";
-import machine from "../../store/machine";
-import Alphabet from "../Alphabet/Alphabet";
+import practice from "../../store/practice";
 import TableOfStates from "../TableOfStates/TableOfStates";
-import css from "./TuringMachine.module.css";
-// import arrowNext from "../../assets/arrowNext.png";
+import css from "./PracticeMachine.module.css";
 
 interface cellForChange {
     id: number;
     value: string;
 }
 
-const TuringMachine = observer(() => {
-    //Форма изменения внутреннего алфавита
-
+const PracticeMachine: React.FC = () => {
     //Сделать 1 шаг
     const makeOneStep = () => {
-        return machine.makeStep();
+        return practice.makeStep();
     };
 
     //Сбросить настройки машины до первоначальных
     const resetMachine = () => {
         // machine.alphabet = "01";
-        machine.reset();
+        practice.reset();
         // formikSetAlphabet.values.alphabet = "01";
     };
 
@@ -48,67 +44,58 @@ const TuringMachine = observer(() => {
     };
 
     const editCell = (cell: cellForChange) => {
-        machine.editCell(cell.id);
+        practice.editCell(cell.id);
         setCurrEditedCell(cell.value);
     };
 
     const [currEditedCell, setCurrEditedCell] = useState("");
     const editCellValue = (value: string) => {
-        if (value.length > 1 || !machine.alphabet.includes(value)) {
+        if (value.length > 1 || !practice.alphabet.includes(value)) {
             return false;
         }
         setCurrEditedCell(value);
     };
 
     const saveCellValue = (cell: cellForChange) => {
-        machine.editCellValue(cell.value);
-        machine.editCell(10000000);
+        practice.editCellValue(cell.value);
+        practice.editCell(10000000);
     };
-
     return (
         <div className={css.machine}>
-            <div className={css.machine__panel}>
-                <div className={css.machine__panel_title}>
-                    <h1>Панель управления</h1>
+            <div className={cn(css.machine__panel, css.panel)}>
+                <div className={css.panel__el}>
+                    <p>
+                        <b> Задание: </b>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime distinctio
+                        accusantium temporibus labore autem ad fugit explicabo recusandae molestias commodi molestiae
+                    </p>
                 </div>
-                <div className={css.panel}>
-                    <div className={css.panel__el}>
-                        <button className={css.panel__button} onClick={makeOneStep}>
-                            Сделать шаг
-                        </button>
-                        <button
-                            className={css.panel__button}
-                            onClick={() => {
-                                handleStartStopMachine();
-                            }}
-                        >
-                            {currentMachineStatus ? <> Остановить</> : <> Запустить</>}
-                        </button>
-                    </div>
-                    <div className={css.panel__el}>
-                        <button className={css.panel__button} onClick={() => resetMachine()}>
-                            Сбросить настройки
-                        </button>
-                    </div>
+                <div className={css.panel__el}>
+                    <button className={css.panel__button} onClick={() => resetMachine()}>
+                        Сбросить
+                    </button>
+                    {/* <button className={css.panel__button} onClick={makeOneStep}>
+                        Запустить
+                    </button> */}
+                    <button
+                        className={css.panel__button}
+                        onClick={() => {
+                            handleStartStopMachine();
+                        }}
+                    >
+                        {currentMachineStatus ? <> Остановить</> : <> Запустить</>}
+                    </button>
                 </div>
             </div>
             <div className={css.machine__body}>
                 <div className={css.functional}>
                     <div className={css.tape}>
-                        <div className={css.tape__left} onClick={() => machine.changeCurrentCells("L")}>
-                            Налево
-                        </div>
                         <div className={css.tape__cells}>
-                            {machine.currentCells.map((cell) => {
+                            {practice.currentCells.map((cell) => {
                                 return (
                                     <>
-                                        {cell.id === machine.currentCell ? (
-                                            <div
-                                                className={css.currCell}
-                                                key={cell.id}
-                                                onDoubleClick={() => editCell({ id: cell.id, value: cell.value })}
-                                            >
-                                                {machine.currEditedCell === cell.id ? (
+                                        {cell.id === practice.currentCell ? (
+                                            <div className={css.currCell} key={cell.id}>
+                                                {practice.currEditedCell === cell.id ? (
                                                     <input
                                                         className={css.inputEditCell}
                                                         type={"text"}
@@ -116,7 +103,7 @@ const TuringMachine = observer(() => {
                                                         value={currEditedCell}
                                                         onBlur={(e) =>
                                                             saveCellValue({
-                                                                id: machine.currEditedCell,
+                                                                id: practice.currEditedCell,
                                                                 value: e.target.value,
                                                             })
                                                         }
@@ -131,7 +118,7 @@ const TuringMachine = observer(() => {
                                                 key={cell.id}
                                                 onDoubleClick={() => editCell({ id: cell.id, value: cell.value })}
                                             >
-                                                {machine.currEditedCell === cell.id ? (
+                                                {practice.currEditedCell === cell.id ? (
                                                     <input
                                                         className={css.inputEditCell}
                                                         type={"text"}
@@ -139,7 +126,7 @@ const TuringMachine = observer(() => {
                                                         value={currEditedCell}
                                                         onBlur={(e) =>
                                                             saveCellValue({
-                                                                id: machine.currEditedCell,
+                                                                id: practice.currEditedCell,
                                                                 value: e.target.value,
                                                             })
                                                         }
@@ -153,31 +140,25 @@ const TuringMachine = observer(() => {
                                 );
                             })}
                         </div>
-                        <div className={css.tape__right} onClick={() => machine.changeCurrentCells("R")}>
-                            Направо
-                        </div>
                     </div>
 
                     {/* Текущее состояние */}
-                    <div className={css.currentState}>{machine.currentState}</div>
+                    <div className={css.currentState}>{practice.currentState}</div>
 
                     {/* Алфавит */}
-                    <Alphabet initialInput={machine.alphabet} />
+                    <div className={css.alphabet}>
+                        <div className={css.alphabet__title}>Алфавит:</div>
+                        <div className={css.alphabet__values}>
+                            <input placeholder={"01"} id="alphabet" value="01" type="text" readOnly={true} />
+                        </div>
+                    </div>
 
                     {/* Таблица состояний */}
                     <TableOfStates />
                 </div>
-                <div className={css.actionLog}>
-                    <div className={css.actionLog__header}>Журнал действий</div>
-                    <div className={css.actionLog__body}>
-                        {machine.actionLogs.map((log) => {
-                            return <div>{log}</div>;
-                        })}
-                    </div>
-                </div>
             </div>
         </div>
     );
-});
+};
 
-export default TuringMachine;
+export default PracticeMachine;

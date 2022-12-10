@@ -1,0 +1,175 @@
+.machine {
+    background-color: rgb(245, 245, 245);
+    // border: 3px solid black;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    &__panel {
+        display: grid;
+        grid-template-columns: 40% 60%;        
+        border-bottom: 3px solid black;
+        font-size: 16px !important;
+    }
+
+    &__body {
+        padding: 0px 30px 30px 30px;
+    }
+}
+
+.panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 0px 15px 0px 0px;
+    background-color: bisque;
+    padding: 30px 35px;
+
+    &__button {
+        padding: 10px 15px;
+        margin: 0px 10px;
+        // border: 2px inset black;
+        border-radius: 15px;
+        background-color: rgb(62, 57, 57);
+        color: white;
+        font-size: larger;
+        border-bottom: 4px solid #b2b1b1;
+        text-shadow: 0px 1px 0px #fafafa;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(93, 92, 92);
+            transition: 0.3s;
+        }
+    }
+    &__el {
+       width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+       
+        p {
+            overflow-y: auto;
+            max-height: 100px;
+            b {
+                font-weight: 800;
+            }
+        }
+        
+        // img {
+        //     max-width: 50px;
+        // }
+
+    }
+}
+
+.tape {
+    display: flex;
+    flex-direction: row;
+
+    margin: 0px auto;
+    margin-top: 15px;
+    // margin-bottom: 5px;
+    justify-content: space-around;
+    align-items: center;
+
+    &__cells {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+    }
+
+}
+
+.cell {
+    box-sizing: content-box;
+
+    min-width: 45px;
+    min-height: 50px;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.currCell {
+    box-sizing: content-box;
+
+    min-width: 45px;
+    min-height: 30px;
+    padding: 3px;
+    border: 3px dashed black;
+    background-color: #f5e9e9;
+
+    text-align: center;
+
+    font-size: 40px;
+    font-weight: 700;
+}
+
+
+.currentState {
+    margin: 0px auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 10px;
+
+    font-size: 30px;
+    font-weight: 800;
+}
+
+
+.inputEditCell {
+    width: 30px;
+    height: 40px;
+    font-size: 35px;
+}
+
+
+
+.alphabet {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__title {
+        padding: 10px;
+    }
+
+    &__input {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__values {
+        input {
+            padding: 10px;
+            font-size: 20px;
+        }
+    }
+
+    &__confirm {
+        margin-left: 10px;
+        button {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 35px;
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(59, 59, 59);
+                transition: 0.2s;
+            }
+        }
+    }
+
+}

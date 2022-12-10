@@ -1,9 +1,9 @@
-import cn from "classnames";
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
 import practice from "../../store/practice";
-import TuringMachine from "../TuringMachine/TuringMachine";
+import PracticeMachine from "../PracticeMachine/PracticeMachine";
 import css from "./Practice.module.css";
+import cn from "classnames";
 
 const Practice = observer(() => {
     useEffect(() => {
@@ -12,39 +12,47 @@ const Practice = observer(() => {
 
     return (
         <div className={css.practice}>
-            <div className={css.practice__settings}>
-                <div className={css.practice__settings_title}>
-                    <h1>Практические задания</h1>
-                </div>
-                <div className={cn(css.practice__settings_progress, css.progress)}>
-                    <div className={css.progress__title}>Ваш прогресс:</div>
-                    <div className={css.progress__indicator}>
-                        {practice.currentProgress} из {practice.tasks.length}
+            <div className={cn(css.practice__panel, css.panel)}>
+                <>
+                    <div className={css.panel__settings}>
+                        <div>
+                            <h1>Практические задания</h1>
+                        </div>
+                        <div className={cn(css.panel__settings_progress, css.progress)}>
+                            <div className={css.progress__title}>Ваш прогресс: </div>
+                            <div className={css.progress__indicator}>
+                                {practice.currentProgress} из {practice.tasks.length}
+                            </div>
+                        </div>
+                        <div className={cn(css.practice__panel_progress)}>
+                            Фильтры
+                            <label>Здесь фильтры</label>
+                            <input type={"checkbox"} checked={false} title={"Показать"} />
+                        </div>
                     </div>
-                </div>
-                <div className={cn(css.practice__settings_progress, css.progress)}>
-                    <label>Здесь фильтры</label>
-                </div>
-                <div className={css.practice__tasks}>
-                    {practice.tasks.length ? (
-                        practice.tasks.map((task) => {
-                            return (
-                                <Task
-                                    key={task.id}
-                                    taskId={task.id}
-                                    difficult={task.difficult}
-                                    isCompleted={task.isCompleted}
-                                    taskText={task.taskText}
-                                />
-                            );
-                        })
-                    ) : (
-                        <h2>Задания отсутствуют</h2>
-                    )}
-                </div>
+                </>
+                <>
+                    <div className={css.panel__tasks}>
+                        {practice.tasks.length ? (
+                            practice.tasks.map((task) => {
+                                return (
+                                    <Task
+                                        key={task.id}
+                                        taskId={task.id}
+                                        difficult={task.difficult}
+                                        isCompleted={task.isCompleted}
+                                        taskText={task.taskText}
+                                    />
+                                );
+                            })
+                        ) : (
+                            <h2>Задания отсутствуют</h2>
+                        )}
+                    </div>
+                </>
             </div>
-            <div className={css.practice__tasks}>
-                <TuringMachine />
+            <div className={css.practice__machine}>
+                <PracticeMachine />
             </div>
         </div>
     );

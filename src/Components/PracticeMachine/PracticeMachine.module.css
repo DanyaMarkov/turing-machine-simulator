@@ -1,0 +1,223 @@
+.machine {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.machine__panel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
+  border-bottom: 3px solid black;
+  font-size: 16px !important;
+}
+
+.machine__body {
+  padding: 0px 30px 30px 30px;
+}
+
+.panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 0px 15px 0px 0px;
+  background-color: bisque;
+  padding: 30px 35px;
+}
+
+.panel__button {
+  padding: 10px 15px;
+  margin: 0px 10px;
+  border-radius: 15px;
+  background-color: #3e3939;
+  color: white;
+  font-size: larger;
+  border-bottom: 4px solid #b2b1b1;
+  text-shadow: 0px 1px 0px #fafafa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.panel__button:hover {
+  cursor: pointer;
+  background-color: #5d5c5c;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.panel__el {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.panel__el p {
+  overflow-y: auto;
+  max-height: 100px;
+}
+
+.panel__el p b {
+  font-weight: 800;
+}
+
+.tape {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0px auto;
+  margin-top: 15px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tape__cells {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: white;
+}
+
+.cell {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  min-width: 45px;
+  min-height: 50px;
+  padding: 5px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.currCell {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  min-width: 45px;
+  min-height: 30px;
+  padding: 3px;
+  border: 3px dashed black;
+  background-color: #f5e9e9;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.currentState {
+  margin: 0px auto;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 10px;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.inputEditCell {
+  width: 30px;
+  height: 40px;
+  font-size: 35px;
+}
+
+.alphabet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alphabet__title {
+  padding: 10px;
+}
+
+.alphabet__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alphabet__values input {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.alphabet__confirm {
+  margin-left: 10px;
+}
+
+.alphabet__confirm button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 35px;
+}
+
+.alphabet__confirm button:hover {
+  cursor: pointer;
+  background-color: #3b3b3b;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+/*# sourceMappingURL=PracticeMachine.module.css.map */

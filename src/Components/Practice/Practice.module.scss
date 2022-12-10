@@ -8,25 +8,39 @@
 
     display: grid;
     grid-template-columns: 40% 60%;
+       
 
-    &__settings {
-        border-radius: 25px 0px 0px 25px;
+    &__panel {
+        border-radius: 10px 0px 0px 10px;
         background-color: beige;
         padding: 10px 20px;
         border-right: 2px solid black;
-        &_title {
-            font-size: 20px;
-            font-weight: 800;
-        }
-    }
 
+    }
+    &__machine {
+        border-radius: 0px 10px 10px 0px;
+
+    }
+}
+
+.panel {
+    &__settings {
+        display: flex;
+        flex-direction: column;
+    }
     &__tasks {
+        display: flex;
+        flex-direction: column;
         padding: 30px 30px;
         overflow-y: auto;
         height: 60vh;
     }
 }
 
+.progress {
+    display: flex;
+    flex-direction: row;
+}
 
 .content {
     padding: 5px 20px;
