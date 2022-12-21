@@ -83,4 +83,50 @@
   background-color: #e57b7b;
   color: white;
 }
+
+@media (max-width: 800px) {
+  .table {
+    font-size: 12px;
+  }
+  .tableHeader {
+    border: 3px solid black;
+    padding: 10px 80px;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+  .tableHeader__addState {
+    background-color: transparent !important;
+    border: none !important;
+  }
+  .tableHeader__addState button {
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
+  }
+  .tableHeader__addState button:hover {
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .tableHeader__el {
+    padding: 10px 50px;
+  }
+  .tableHeader__el:not(:first-child):hover {
+    background-color: #e17474;
+    cursor: pointer;
+  }
+  .char {
+    padding: 20px 10px;
+    border: 1px solid black;
+    margin: 0px;
+    text-align: center;
+  }
+  .choose {
+    border: 1px solid black;
+  }
+  .choose select {
+    font-size: 10px !important;
+    margin: 1px 1px;
+    padding: 10px;
+  }
+}
 /*# sourceMappingURL=TableOfStates.module.css.map */

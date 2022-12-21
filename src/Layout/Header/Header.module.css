@@ -98,4 +98,23 @@
     margin-left: 00px;
   }
 }
+
+@media (max-width: 800px) {
+  .header {
+    padding: 5px 0px !important;
+    font-size: 8px;
+  }
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .menu__el:not(:first-child) {
+    margin-left: 00px;
+  }
+}
 /*# sourceMappingURL=Header.module.css.map */

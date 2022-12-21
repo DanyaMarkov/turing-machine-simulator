@@ -51,4 +51,54 @@
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+
+@media (max-width: 800px) {
+  .alphabet {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .alphabet__title {
+    padding: 5px;
+  }
+  .alphabet__input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .alphabet__values input {
+    padding: 5px;
+    font-size: 16px;
+  }
+  .alphabet__confirm {
+    margin-left: 10px;
+  }
+  .alphabet__confirm button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 35px;
+  }
+  .alphabet__confirm button:hover {
+    cursor: pointer;
+    background-color: #3b3b3b;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+}
 /*# sourceMappingURL=Alphabet.module.css.map */

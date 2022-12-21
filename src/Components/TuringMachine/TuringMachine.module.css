@@ -257,4 +257,99 @@
     font-weight: 700;
   }
 }
+
+@media (max-width: 800px) {
+  .machine {
+    font-size: 12px !important;
+  }
+  .machine__body {
+    padding: 0px 30px 30px 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .machine__panel {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 40% 60%;
+        grid-template-columns: 40% 60%;
+    margin-bottom: 10px;
+    border-bottom: 3px solid black;
+    font-size: 12px !important;
+  }
+  .machine__panel_title {
+    font-size: 12px;
+    font-family: 'Press Start 2P', cursive;
+  }
+  .panel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    border-radius: 0px 15px 0px 0px;
+    background-color: bisque;
+    padding: 5px 7px;
+    font-size: 11px !important;
+  }
+  .tape__cells {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .cell {
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    padding: 5px;
+    min-width: 5px;
+    min-height: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .currentState {
+    margin: 0px auto;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-right: 10px;
+    font-size: 15px;
+    font-weight: 800;
+  }
+  .currCell {
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    min-width: 25px;
+    min-height: 20px;
+    padding: 3px;
+    border: 3px dashed black;
+    background-color: #f5e9e9;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
 /*# sourceMappingURL=TuringMachine.module.css.map */
