@@ -4,9 +4,10 @@
   min-height: 78vh;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1340px) {
   .main {
     padding: 20px 0px;
+    font-size: 12px;
   }
 }
 /*# sourceMappingURL=Layout.module.css.map */

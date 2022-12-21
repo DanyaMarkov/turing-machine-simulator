@@ -12,7 +12,7 @@ class practice {
         {
             id: 1, 
             difficult:"easy", 
-            isCompleted: false, 
+            isCompleted: true, 
             taskText: "",
             startStroke: "111"
         },
@@ -38,68 +38,34 @@ class practice {
             startStroke: "100"
         },
         {
-            id: 4, 
+            id: 5, 
             difficult:"hard", 
             isCompleted: false,
             taskText: "",
             startStroke: "100"
         },
         {
-            id: 4, 
+            id: 6, 
             difficult:"hard", 
             isCompleted: false,
             taskText: "",
             startStroke: "100"
         },
         {
-            id: 4, 
+            id: 7, 
             difficult:"hard", 
             isCompleted: false,
             taskText: "",
             startStroke: "100"
         },
         {
-            id: 4, 
+            id: 8, 
             difficult:"hard", 
             isCompleted: false,
             taskText: "",
             startStroke: "100"
         },
-        {
-            id: 4, 
-            difficult:"hard", 
-            isCompleted: false,
-            taskText: "",
-            startStroke: "100"
-        },
-        {
-            id: 4, 
-            difficult:"hard", 
-            isCompleted: false,
-            taskText: "",
-            startStroke: "100"
-        },
-        {
-            id: 4, 
-            difficult:"hard", 
-            isCompleted: false,
-            taskText: "",
-            startStroke: "100"
-        },
-        {
-            id: 4, 
-            difficult:"hard", 
-            isCompleted: false,
-            taskText: "",
-            startStroke: "100"
-        },
-        {
-            id: 4, 
-            difficult:"hard", 
-            isCompleted: false,
-            taskText: "",
-            startStroke: "100"
-        },
+
     ]
 
     getCurrentProgress() {

@@ -51,9 +51,9 @@ const Landing = observer(() => {
                     <div className={cn(css.utility__content_el1, css.reason)}>
                         <div className={css.reason__title}>Познать понятие "алгоритм"</div>
                         <div className={css.reason__text}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quas placeat doloremque
-                            cupiditate mollitia odio dolorem doloribus quaerat rerum ut ullam harum quis maiores.
-                            Inventore, rem. Magni porro accusamus neque sequi iusto in similique modi earum, odit
+                            Алгоритм - онечная совокупность точно заданных правил решения некоторого класса задач или
+                            набор инструкций, описывающих порядок действий исполнителя для решения определённой задачи.
+                            Понимание принципа алгоритма делает вас очень умным.
                         </div>
                         <div className={css.reason__icon}>
                             <img src={algorithm} alt="алгоритм" />
@@ -62,10 +62,11 @@ const Landing = observer(() => {
                     <div className={cn(css.utility__content_el2, css.reason)}>
                         <div className={css.reason__title}> Теоретически понять работу вычислительных машин</div>
                         <div className={css.reason__text}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quas placeat doloremque
-                            cupiditate mollitia odio dolorem doloribus quaerat rerum ut ullam harum quis maiores.
-                            Inventore, rem. Magni porro accusamus neque sequi iusto in similique modi earum, odit
-                            explicabo sunt cupiditate, id, assumenda repellat autem? Nesciunt ipsum atque animi quae
+                            Вычислительная маши́на, счётная машиина — механизм, электромеханическое или электронное
+                            устройство, предназначенное для автоматического выполнения математических операций. В
+                            последнее время это понятие чаще всего ассоциируется с различными видами компьютерных
+                            систем. Тем не менее вычислительные механизмы появились задолго до того, как заработал
+                            первый компьютер.
                         </div>
                         <div className={css.reason__icon}>
                             <img src={computingMachine} alt="вычислительная машина" />
@@ -74,10 +75,9 @@ const Landing = observer(() => {
                     <div className={cn(css.utility__content_el3, css.reason)}>
                         <div className={css.reason__title}> Научиться решать алгоритмические задачи</div>
                         <div className={css.reason__text}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, quas placeat doloremque
-                            cupiditate mollitia odio dolorem doloribus quaerat rerum ut ullam harum quis maiores.
-                            Inventore, rem. Magni porro accusamus neque sequi iusto in similique modi earum, odit
-                            explicabo sunt cupiditate, id, assumenda repellat autem? Nesciunt ipsum atque animi quaу
+                            Знание алгоритмов помогает писать более эффективный код, правильно выстраивать архитектуру
+                            проекта и отдельных модулей, а также отсеивать операции, ненужные для решения задачи.
+                            Математический склад ума очень ценен в наше время
                         </div>
                         <div className={css.reason__icon}>
                             <img src={task} alt="алгоритмическая задача" />

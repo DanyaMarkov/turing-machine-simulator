@@ -1,0 +1,72 @@
+.table {
+    font-size: 18px;
+    border: 2px solid black;
+    overflow-x:auto;
+    table {
+        th {
+            background-color: blanchedalmond;
+            // padding: 10px 115px;
+            border: 1px solid black;
+            min-width: 50px;
+            font-weight: 800;
+        }
+    }
+}
+
+.tableHeader {
+    border: 3px solid black;
+    padding: 10px 80px;
+
+    // overflow-x:scroll;
+    box-sizing: content-box;
+
+
+    &__el {
+        padding: 10px 90px;
+        &:not(:first-child) {
+            &:hover {
+                background-color: rgb(225, 116, 116);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.char {
+    padding: 50px 10px;
+    border: 1px solid black;
+    margin: 0px;
+    text-align: center;
+}
+
+.choose {
+    border: 1px solid black;
+    select {
+        font-size: 20px !important;
+        margin: 1px 1px;
+        padding: 10px;
+    }
+}
+
+.notChoose {
+    padding: 10px;
+}
+
+.addState {
+    padding: 5px;
+    font-size: 30px;
+    border: 1px dashed rgb(95, 95, 95);
+    text-align: center;
+}
+.addState:hover {
+    background-color: rgb(192, 192, 192);
+    transition: 0.3s;
+}
+
+.deleteRule {
+    font-size: 20px !important;
+
+    padding: 5px;
+    background-color: rgb(229, 123, 123);
+    color: white;
+}

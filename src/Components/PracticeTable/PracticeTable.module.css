@@ -1,0 +1,70 @@
+.table {
+  font-size: 18px;
+  border: 2px solid black;
+  overflow-x: auto;
+}
+
+.table table th {
+  background-color: blanchedalmond;
+  border: 1px solid black;
+  min-width: 50px;
+  font-weight: 800;
+}
+
+.tableHeader {
+  border: 3px solid black;
+  padding: 10px 80px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.tableHeader__el {
+  padding: 10px 90px;
+}
+
+.tableHeader__el:not(:first-child):hover {
+  background-color: #e17474;
+  cursor: pointer;
+}
+
+.char {
+  padding: 50px 10px;
+  border: 1px solid black;
+  margin: 0px;
+  text-align: center;
+}
+
+.choose {
+  border: 1px solid black;
+}
+
+.choose select {
+  font-size: 20px !important;
+  margin: 1px 1px;
+  padding: 10px;
+}
+
+.notChoose {
+  padding: 10px;
+}
+
+.addState {
+  padding: 5px;
+  font-size: 30px;
+  border: 1px dashed #5f5f5f;
+  text-align: center;
+}
+
+.addState:hover {
+  background-color: silver;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.deleteRule {
+  font-size: 20px !important;
+  padding: 5px;
+  background-color: #e57b7b;
+  color: white;
+}
+/*# sourceMappingURL=PracticeTable.module.css.map */

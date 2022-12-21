@@ -1,13 +1,8 @@
 import cn from "classnames";
 import { useState } from "react";
 import practice from "../../store/practice";
-import TableOfStates from "../TableOfStates/TableOfStates";
+import PracticeTable from "../PracticeTable/PracticeTable";
 import css from "./PracticeMachine.module.css";
-
-interface cellForChange {
-    id: number;
-    value: string;
-}
 
 const PracticeMachine: React.FC = () => {
     //Сделать 1 шаг
@@ -43,23 +38,6 @@ const PracticeMachine: React.FC = () => {
         setMachineStatus(newIntervalId);
     };
 
-    const editCell = (cell: cellForChange) => {
-        practice.editCell(cell.id);
-        setCurrEditedCell(cell.value);
-    };
-
-    const [currEditedCell, setCurrEditedCell] = useState("");
-    const editCellValue = (value: string) => {
-        if (value.length > 1 || !practice.alphabet.includes(value)) {
-            return false;
-        }
-        setCurrEditedCell(value);
-    };
-
-    const saveCellValue = (cell: cellForChange) => {
-        practice.editCellValue(cell.value);
-        practice.editCell(10000000);
-    };
     return (
         <div className={css.machine}>
             <div className={cn(css.machine__panel, css.panel)}>
@@ -92,51 +70,9 @@ const PracticeMachine: React.FC = () => {
                         <div className={css.tape__cells}>
                             {practice.currentCells.map((cell) => {
                                 return (
-                                    <>
-                                        {cell.id === practice.currentCell ? (
-                                            <div className={css.currCell} key={cell.id}>
-                                                {practice.currEditedCell === cell.id ? (
-                                                    <input
-                                                        className={css.inputEditCell}
-                                                        type={"text"}
-                                                        onChange={(e) => editCellValue(e.target.value)}
-                                                        value={currEditedCell}
-                                                        onBlur={(e) =>
-                                                            saveCellValue({
-                                                                id: practice.currEditedCell,
-                                                                value: e.target.value,
-                                                            })
-                                                        }
-                                                    />
-                                                ) : (
-                                                    cell.value
-                                                )}
-                                            </div>
-                                        ) : (
-                                            <div
-                                                className={css.cell}
-                                                key={cell.id}
-                                                onDoubleClick={() => editCell({ id: cell.id, value: cell.value })}
-                                            >
-                                                {practice.currEditedCell === cell.id ? (
-                                                    <input
-                                                        className={css.inputEditCell}
-                                                        type={"text"}
-                                                        onChange={(e) => editCellValue(e.target.value)}
-                                                        value={currEditedCell}
-                                                        onBlur={(e) =>
-                                                            saveCellValue({
-                                                                id: practice.currEditedCell,
-                                                                value: e.target.value,
-                                                            })
-                                                        }
-                                                    />
-                                                ) : (
-                                                    cell.value
-                                                )}
-                                            </div>
-                                        )}
-                                    </>
+                                    <div className={css.cell} key={cell.id}>
+                                        {cell.value}
+                                    </div>
                                 );
                             })}
                         </div>
@@ -153,8 +89,8 @@ const PracticeMachine: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Таблица состояний */}
-                    <TableOfStates />
+                    {/* Таблица переходов */}
+                    <PracticeTable />
                 </div>
             </div>
         </div>
